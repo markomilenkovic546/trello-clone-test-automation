@@ -1,0 +1,50 @@
+[
+  {
+    "User_ID": 1,
+    "Full_Name": "Rico Poole",
+    "Email": "Webervat36@einrot.com",
+    "Password": "n25hWG1nCynJmO9",
+    "Status": "To Be Registered",
+    "Comment": "Valid input"
+  },
+  {
+    "User_ID": 2,
+    "Full_Name": "Wanda Peters",
+    "Email": "Cored1952@fleckens.hu",
+    "Password": "nBmDAAqqLYQOQVZ",
+    "Status": "Existing",
+    "Comment": "Valid input"
+  },
+  {
+    "User_ID": 3,
+    "Full_Name": "Melisa Thomas#",
+    "Email": "Twout1938@dayrep.com",
+    "Password": "PoWt1HBa48oV2IH",
+    "Status": "To Be Registered",
+    "Comment": "Invalid - Contains special characters"
+  },
+  {
+    "User_ID": 4,
+    "Full_Name": "Wanda Peters",
+    "Email": "Twdsout1938@@armyspy.com",
+    "Password": "i1G8Ko2nolBVuSD",
+    "Status": "To Be Registered",
+    "Comment": "Invalid - email fromat is invalid"
+  },
+  {
+    "User_ID": 5,
+    "Full_Name": "Kevin Johanson",
+    "Email": "kevinjohanson324@armyspy.com",
+    "Password": "131dssdferghdw12324",
+    "Status": "Existing",
+    "Comment": "Valid - To be invited"
+  },
+  {
+    "User_ID": 6,
+    "Full_Name": "John Smith",
+    "Email": "johnsmith3144@armyspy.com",
+    "Password": "kqwbghj2S8963Jdasd",
+    "Status": "Should Never Be Registered",
+    "Comment": "Should not be able access any board or accept inventation"
+  }
+]
