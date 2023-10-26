@@ -1,10 +1,10 @@
 [
   {
     "User_ID": 1,
-    "Full_Name": "Rico Poole",
-    "Email": "Webervat36@einrot.com",
+    "Full_Name": "Rico Poole# 1st",
+    "Email": "Webervat367f28@einrot.com",
     "Password": "n25hWG1nCynJmO9",
-    "Status": "To Be Registered",
+    "Status": "Not registered",
     "Comment": "Valid input"
   },
   {
@@ -17,18 +17,18 @@
   },
   {
     "User_ID": 3,
-    "Full_Name": "Melisa Thomas#",
+    "Full_Name": "Melisa Thomas",
     "Email": "Twout1938@dayrep.com",
-    "Password": "PoWt1HBa48oV2IH",
-    "Status": "To Be Registered",
-    "Comment": "Invalid - Contains special characters"
+    "Password": "PoWt1HBa48oV2IH#",
+    "Status": "Not registered",
+    "Comment": "To test empty field combinations"
   },
   {
     "User_ID": 4,
     "Full_Name": "Wanda Peters",
     "Email": "Twdsout1938@@armyspy.com",
     "Password": "i1G8Ko2nolBVuSD",
-    "Status": "To Be Registered",
+    "Status": "Not registered",
     "Comment": "Invalid - email fromat is invalid"
   },
   {
@@ -46,5 +46,14 @@
     "Password": "kqwbghj2S8963Jdasd",
     "Status": "Should Never Be Registered",
     "Comment": "Should not be able access any board or accept inventation"
+  },
+  {
+    "User_ID": 7,
+    "Full_Name": "Rico Varga",
+    "Email": "Webervat36724@einrot.com",
+    "Password": "n25hWG1nCynJmO9",
+    "Status": "Existing",
+    "Comment": "Already registered"
   }
+
 ]

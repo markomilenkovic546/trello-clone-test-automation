@@ -7,6 +7,7 @@ class RegistrationPage {
     confirmPasswordField: () => Cypress.Chainable<JQuery<HTMLElement>>;
     errorMessage: (message: string) => Cypress.Chainable<JQuery<HTMLElement>>;
     signupBtn: () => Cypress.Chainable<JQuery<HTMLElement>>;
+    linkToLoginPage: () => Cypress.Chainable<JQuery<HTMLElement>>;
   };
 
   constructor() {
@@ -17,6 +18,7 @@ class RegistrationPage {
       confirmPasswordField: () => cy.get('input[name="confirmPassword"]'),
       errorMessage: (message: string) => cy.get(".chakra-alert__desc").contains(message),
       signupBtn: () => cy.get('button:contains("Sign up")'),
+      linkToLoginPage: () => cy.get("a").contains("Already have an account? Log in."),
     };
   }
 
@@ -56,6 +58,9 @@ class RegistrationPage {
 
   clickOnSubmitButton() {
     this.elements.signupBtn().click();
+  }
+  clickOnLinkToLoginPage() {
+    this.elements.linkToLoginPage().click();
   }
 }
 
