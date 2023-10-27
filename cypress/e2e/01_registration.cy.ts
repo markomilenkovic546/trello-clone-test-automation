@@ -1,5 +1,5 @@
-import WelcomePage from "../pages/welcome-page";
-import RegistractionPage from "../pages/registration-page";
+import WelcomePage from "../POM/welcome-page";
+import RegistractionPage from "../POM/registration-page";
 const welcomePage = new WelcomePage();
 const registrationPage = new RegistractionPage();
 
