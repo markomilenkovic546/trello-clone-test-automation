@@ -1,15 +1,13 @@
-import WelcomePage from "../POM/welcome-page";
-import RegistractionPage from "../POM/registration-page";
-import LoginPage from "../POM/login-page";
+import WelcomePage from "@welcome-page/welcome-page";
+import RegistractionPage from "@registration-page/registration-page";
+import LoginPage from "@login-page/login-page";
+import * as users from "@fixtures/users.json"
 const welcomePage = new WelcomePage();
 const registrationPage = new RegistractionPage();
 const loginPage = new LoginPage();
 
 beforeEach(function () {
   cy.visit("/");
-  cy.fixture("users").then((users) => {
-    this.users = users;
-  });
 });
 
 describe("Tests which cover functionalites related to Login ", () => {
@@ -37,13 +35,13 @@ describe("Tests which cover functionalites related to Login ", () => {
     // Verify that "Login" page is open
     cy.url().should("include", "/login");
     // Type email into the "Email" field
-    loginPage.typeEmail(this.users[1].Email);
+    loginPage.typeEmail(users[1].Email);
     // Verify that "email" field has correct value
-    loginPage.elements.emailField().should("have.attr", "value", this.users[1].Email);
+    loginPage.elements.emailField().should("have.attr", "value", users[1].Email);
     // Type password into the "Password" field
-    loginPage.typePassword(this.users[1].Password);
+    loginPage.typePassword(users[1].Password);
     // Verify that "Password" field has correct value
-    loginPage.elements.passwordField().should("have.attr", "value", this.users[1].Password);
+    loginPage.elements.passwordField().should("have.attr", "value", users[1].Password);
     // Click on the submit button
     loginPage.clickOnSignInButton();
     cy.wait(4000);
@@ -57,9 +55,9 @@ describe("Tests which cover functionalites related to Login ", () => {
     // Verify that "Login" page is open
     cy.url().should("include", "/login");
     // Type password into the "Password" field
-    loginPage.typePassword(this.users[1].Password);
+    loginPage.typePassword(users[1].Password);
     // Verify that "Password" field has correct value
-    loginPage.elements.passwordField().should("have.attr", "value", this.users[1].Password);
+    loginPage.elements.passwordField().should("have.attr", "value", users[1].Password);
     // Click on the submit button
     loginPage.clickOnSignInButton();
     // Verify that user is not redirected to homepage
@@ -72,9 +70,9 @@ describe("Tests which cover functionalites related to Login ", () => {
     // Verify that "Login" page is open
     cy.url().should("include", "/login");
     // Type email into the "Email" field
-    loginPage.typeEmail(this.users[1].Email);
+    loginPage.typeEmail(users[1].Email);
     // Verify that "email" field has correct value
-    loginPage.elements.emailField().should("have.attr", "value", this.users[1].Email);
+    loginPage.elements.emailField().should("have.attr", "value", users[1].Email);
     // Click on the submit button
     loginPage.clickOnSignInButton();
     // Verify that user is redirected to homepage
@@ -87,13 +85,13 @@ describe("Tests which cover functionalites related to Login ", () => {
     // Verify that "Login" page is open
     cy.url().should("include", "/login");
     // Type email into the "Email" field
-    loginPage.typeEmail(this.users[5].Email);
+    loginPage.typeEmail(users[5].Email);
     // Verify that "email" field has correct value
-    loginPage.elements.emailField().should("have.attr", "value", this.users[5].Email);
+    loginPage.elements.emailField().should("have.attr", "value", users[5].Email);
     // Type password into the "Password" field
-    loginPage.typePassword(this.users[5].Password);
+    loginPage.typePassword(users[5].Password);
     // Verify that "Password" field has correct value
-    loginPage.elements.passwordField().should("have.attr", "value", this.users[5].Password);
+    loginPage.elements.passwordField().should("have.attr", "value", users[5].Password);
     // Click on the submit button
     loginPage.clickOnSignInButton();
     // Verify that user is not redirected to homepage
@@ -108,13 +106,13 @@ describe("Tests which cover functionalites related to Login ", () => {
     // Verify that "Login" page is open
     cy.url().should("include", "/login");
     // Type email into the "Email" field
-    loginPage.typeEmail(this.users[1].Email);
+    loginPage.typeEmail(users[1].Email);
     // Verify that "email" field has correct value
-    loginPage.elements.emailField().should("have.attr", "value", this.users[1].Email);
+    loginPage.elements.emailField().should("have.attr", "value", users[1].Email);
     // Type password into the "Password" field
-    loginPage.typePassword(this.users[1].Password + 1);
+    loginPage.typePassword(users[1].Password + 1);
     // Verify that "Password" field has correct value
-    loginPage.elements.passwordField().should("have.attr", "value", this.users[1].Password + 1);
+    loginPage.elements.passwordField().should("have.attr", "value", users[1].Password + 1);
     // Click on the submit button
     loginPage.clickOnSignInButton();
     // Verify that user is not redirected to homepage
@@ -132,5 +130,8 @@ describe("Tests which cover functionalites related to Login ", () => {
     loginPage.clickOnSignInButton();
     // Verify that user is not redirected to homepage
     cy.url().should("include", "/login");
+    
   });
+
+  
 });

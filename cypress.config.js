@@ -10,5 +10,6 @@ module.exports = defineConfig({
     },
     baseUrl: "https://trello-clone-one.vercel.app/",
     retries: 3,
+    
   },
 });
