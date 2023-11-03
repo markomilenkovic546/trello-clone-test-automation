@@ -9,6 +9,7 @@
       "@welcome-page/*": ["cypress/POM/*"],
       "@registration-page/*": ["cypress/POM/*"],
       "@login-page/*": ["cypress/POM/*"],
+      "@side-navigation/*": ["cypress/POM/*"],
       "@fixtures/*": ["cypress/fixtures/*"]
     }
   },
