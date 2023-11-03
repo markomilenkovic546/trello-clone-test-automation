@@ -1,5 +1,5 @@
 class SideNavigation {
-//=====================Elements===========================//
+
     elements: {
         homeButton: () => Cypress.Chainable<JQuery<HTMLElement>>;
         boardsButton: () => Cypress.Chainable<JQuery<HTMLElement>>;
@@ -18,6 +18,7 @@ class SideNavigation {
 
 
     constructor() {
+        //=====================Elements===========================//
         this.elements = {
             homeButton: () => cy.get('button:contains("Home")'),
             boardsButton: () => cy.get('button:contains("Boards")'),
@@ -25,7 +26,7 @@ class SideNavigation {
             settingsButton: () => cy.get('button:contains("Settings")'),
 
       }
-    
+       //=====================Actions===========================//
         this.actions = {
             clickOnHomeButton: () => this.elements.homeButton().click(),
             clickOnBoardsButton: () => this.elements.boardsButton().click(),
@@ -34,7 +35,7 @@ class SideNavigation {
         }
 }
 
-//=====================Actions===========================//
+
 
 
 
