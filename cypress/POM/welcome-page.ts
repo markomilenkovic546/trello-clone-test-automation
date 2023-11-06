@@ -25,13 +25,7 @@ class WelcomePage {
 
       //=====================Actions===========================//
 
-      clickOnSignupButton() {
-        this.elements.signupButton().click()
-      }
-
-      clickOnLoginButton() {
-        this.elements.loginButton().click()
-      }
+  
 
 }
 

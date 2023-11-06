@@ -20,7 +20,7 @@
     "Full_Name": "Melisa Thomas",
     "Email": "Twout1938@dayrep.com",
     "Password": "PoWt1HBa48oV2IH#",
-    "Status": "Not registered",
+    "Status": "Not Created",
     "Comment": "To test empty field combinations"
   },
   {
@@ -28,7 +28,7 @@
     "Full_Name": "Wanda Peters",
     "Email": "Twdsout1938@@armyspy.com",
     "Password": "i1G8Ko2nolBVuSD",
-    "Status": "Not registered",
+    "Status": "Not Created",
     "Comment": "Invalid - email fromat is invalid"
   },
   {
@@ -44,8 +44,8 @@
     "Full_Name": "John Smith",
     "Email": "johnsmith3144@armyspy.com",
     "Password": "kqwbghj2S8963Jdasd",
-    "Status": "Should Never Be Registered",
-    "Comment": "Should not be able access any board or accept inventation"
+    "Status": "Not Created",
+    "Comment": "Should not be able to access any board or accept inventation"
   },
   {
     "User_ID": 7,
@@ -54,6 +54,14 @@
     "Password": "n25hWG1nCynJmO9",
     "Status": "Existing",
     "Comment": "Already registered"
-  }
+  },
 
+  {
+    "User_ID": 8,
+    "Full_Name": "Johanes Morallo",
+    "Email": "moores@gdofui.xyz",
+    "Password": "21541kjsdGH1$@#",
+    "Status": "Existing",
+    "Comment": "Should be invited before testing - To verify during testing that user is authorized to manage the board/columns/cards"
+  }
 ]
