@@ -10,7 +10,7 @@
       "@registration-page/*": ["cypress/POM/*"],
       "@login-page/*": ["cypress/POM/*"],
       "@side-navigation/*": ["cypress/POM/*"],
-      "@fixtures/*": ["cypress/fixtures/*"]
+      "@fixtures/*": ["cypress/fixtures/e2e-testing-test-data/*"]
     }
   },
   "include": ["**/*.ts"]
