@@ -1,6 +1,6 @@
 [
   {
-    "User_ID": 1,
+    "User_ID": "1",
     "Full_Name": "Rico Poole# 1st",
     "Email": "Webervat367f28@einrot.com",
     "Password": "n25hWG1nCynJmO9",
@@ -8,15 +8,15 @@
     "Comment": "Valid input"
   },
   {
-    "User_ID": 2,
+    "User_ID": "2",
     "Full_Name": "Wanda Peters",
-    "Email": "Cored1952@fleckens.hu",
+    "Email": "Webed23rvfddfatsdffdd6@einrot.com",
     "Password": "nBmDAAqqLYQOQVZ",
     "Status": "Existing",
     "Comment": "Valid input"
   },
   {
-    "User_ID": 3,
+    "User_ID": "3",
     "Full_Name": "Melisa Thomas",
     "Email": "Twout1938@dayrep.com",
     "Password": "PoWt1HBa48oV2IH#",
@@ -24,7 +24,7 @@
     "Comment": "To test empty field combinations"
   },
   {
-    "User_ID": 4,
+    "User_ID": "4",
     "Full_Name": "Wanda Peters",
     "Email": "Twdsout1938@@armyspy.com",
     "Password": "i1G8Ko2nolBVuSD",
@@ -32,7 +32,7 @@
     "Comment": "Invalid - email fromat is invalid"
   },
   {
-    "User_ID": 5,
+    "User_ID": "5",
     "Full_Name": "Kevin Johanson",
     "Email": "kevinjohanson324@armyspy.com",
     "Password": "131dssdferghdw12324",
@@ -40,7 +40,7 @@
     "Comment": "Valid - To be invited"
   },
   {
-    "User_ID": 6,
+    "User_ID": "6",
     "Full_Name": "John Smith",
     "Email": "johnsmith3144@armyspy.com",
     "Password": "kqwbghj2S8963Jdasd",
@@ -48,7 +48,7 @@
     "Comment": "Should not be able to access any board or accept inventation"
   },
   {
-    "User_ID": 7,
+    "User_ID": "7",
     "Full_Name": "Rico Varga",
     "Email": "Webervat36724@einrot.com",
     "Password": "n25hWG1nCynJmO9",
@@ -57,7 +57,7 @@
   },
 
   {
-    "User_ID": 8,
+    "User_ID": "8",
     "Full_Name": "Johanes Morallo",
     "Email": "moores@gdofui.xyz",
     "Password": "21541kjsdGH1$@#",

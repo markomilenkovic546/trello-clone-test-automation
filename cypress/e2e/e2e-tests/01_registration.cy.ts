@@ -6,6 +6,7 @@ import * as users from "@fixtures/users.json"
 
 beforeEach(function () {
   cy.visit("/");
+  
 });
 describe("Tests which cover functionalites related to Registration ", () => {
   it('User can navigate from "Welcome" page to the "Sign up" page', function () {
