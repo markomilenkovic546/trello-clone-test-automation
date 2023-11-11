@@ -1,0 +1,102 @@
+[
+    
+    {
+        "Column_ID": "1",
+        "Column_Name": "Column#1",
+        "Board_ID": "1",
+        "Status": "Existing",
+        "User_ID": "2",
+        "Comment": "Cards will be created within this column"
+    },
+
+    {
+        "Column_ID": "2",
+        "Column_Name": "Column#2",
+        "Board_ID": "1",
+        "Status": "Existing",
+        "User_ID": "2",
+        "Comment": "To be edited during testing"
+      },
+      {
+        "Column_ID": "3",
+        "Column_Name": "Column#3",
+        "Board_ID": "1",
+        "Status": "Existing",
+        "User_ID": "2",
+        "Comment": "To be deleted during testing"
+      },
+      {
+        "Column_ID": "4",
+        "Column_Name": "Column#4",
+        "Board_ID": "1",
+        "Status": "To_Be_Created",
+        "User_ID": "2",
+        "Comment": "To be created during testing"
+      },
+      {
+        "Column_ID": "5",
+        "Column_Name": "Column#5",
+        "Board_ID": "1",
+        "Status": "Existing",
+        "User_ID": "2",
+        "Comment": "To be moved"
+      },
+      {
+        "Column_ID": "6",
+        "Column_Name": "Column#6",
+        "Board_ID": "5",
+        "Status": "Existing",
+        "User_ID": "2",
+        "Comment": "To test invited user permissions/integration testing"
+      },
+      {
+        "Column_ID": "7",
+        "Column_Name": "Column#7",
+        "Board_ID": "5",
+        "Status": "Existing",
+        "User_ID": "2",
+        "Comment": "To be moved by invited user"
+      },
+      {
+        "Column_ID": "8",
+        "Column_Name": "Column#8",
+        "Board_ID": "5",
+        "Status": "Existing",
+        "User_ID": "2",
+        "Comment": "To be edited by invited user"
+      },
+      {
+        "Column_ID": "9",
+        "Column_Name": "Column#9",
+        "Board_ID": "5",
+        "Status": "Existing",
+        "User_ID": "2",
+        "Comment": "To be deleted by invited user"
+      },
+      {
+        "Column_ID": "10",
+        "Column_Name": "Column#10",
+        "Board_ID": "5",
+        "Status": "Existing",
+        "User_ID": "2",
+        "Comment": "Invited user will create card within"
+      },
+      {
+        "Column_ID": "11",
+        "Column_Name": "Column#11",
+        "Board_ID": "5",
+        "Status": "Existing",
+        "User_ID": "2",
+        "Comment": "Users will not interact with this column"
+      },
+      {
+        "Column_ID": "12",
+        "Column_Name": "Column#12",
+        "Board_ID": "5",
+        "Status": "Existing",
+        "User_ID": "2",
+        "Comment": "Users will not interact with this column"
+      }
+
+
+]
