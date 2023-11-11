@@ -7,108 +7,7 @@
     "Invited_User_ID": "8",
     "Status": "Existing",
     "Comment": "To navigate to the board",
-    "BackgroundImage": "/boards/board-background.jpg",
-    "Columns": [
-      
-        {
-          "Column_ID": "1",
-          "Column_Name": "Column#1",
-          "Board_ID": "1",
-          "Status": "Existing",
-          "Comment": "Cards will be created within this column",
-          "Cards": [
-            {
-              "Card_ID": "1",
-              "Card_Name": "Card#1",
-              "Column_ID": "1",
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned_User_ID": "2",
-              "Status": "Existing",
-              "Comment": "To be moved during testing (drag and drop)"
-            },
-            {
-              "Card_ID": "2",
-              "Card_Name": "Card#2",
-              "Column_ID": "1",
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned_User_ID": "2",
-              "Status": "To_Be_Created",
-              "Comment": "To be created during testing"
-            },
-            {
-              "Card_ID": "3",
-              "Card_Name": "Card#3",
-              "Column_ID": "1",
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned_User_ID": "2",
-              "Status": "Existing",
-              "Comment": "To be deleted during testing"
-            },
-            {
-              "Card_ID": "4",
-              "Card_Name": "Card#4",
-              "Column_ID": "1",
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned_User_ID": "2",
-              "Status": "Existing",
-              "Comment": "To be edited during testing"
-            },
-            {
-              "Card_ID": "5",
-              "Card_Name": "Card#5",
-              "Column_ID": "1",
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned_User_ID": "2",
-              "Status": "Existing",
-              "Comment": "To be edited during testing (Edit name, description, label, assigning)"
-            },
-            {
-              "Card_ID": "6",
-              "Card_Name": "Card#6",
-              "Column_ID": "1",
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned_User_ID": "2",
-              "Status": "Existing",
-              "Comment": "User will not interact with this card"
-            }
-          ]
-        },
-        {
-          "Column_ID": "2",
-          "Column_Name": "Column#2",
-          "Board_ID": "1",
-          "Status": "Existing",
-          "Comment": "To be edited during testing"
-        },
-        {
-          "Column_ID": "3",
-          "Column_Name": "Column#3",
-          "Board_ID": "1",
-          "Status": "Existing",
-          "Comment": "To be deleted during testing"
-        },
-        {
-          "Column_ID": "4",
-          "Column_Name": "Column#4",
-          "Board_ID": "1",
-          "Status": "To_Be_Created",
-          "Comment": "To be created during testing"
-        },
-        {
-          "Column_ID": "5",
-          "Column_Name": "Column#5",
-          "Board_ID": "1",
-          "Status": "Existing",
-          "Comment": "To be moved"
-        }
-      ]
-    
+    "BackgroundImage": "/boards/board-background.jpg"
   },
   {
     "Board_ID": "2",
@@ -118,8 +17,7 @@
     "Invited_User_ID": "/",
     "Status": "To_Be_Created",
     "Comment": "To be created during testing",
-    "BackgroundImage": "/boards/board-background.jpg",
-    "Columns": []
+    "BackgroundImage": "/boards/board-background.jpg"
   },
   {
     "Board_ID": "3",
@@ -129,8 +27,7 @@
     "Invited_User_ID": "/",
     "Status": "Existing",
     "Comment": "To be deleted during test session",
-    "BackgroundImage": "/boards/board-background.jpg",
-    "Columns": []
+    "BackgroundImage": "/boards/board-background.jpg"
   },
   {
     "Board_ID": "4",
@@ -140,8 +37,7 @@
     "Invited_User_ID": "/",
     "Status": "Existing",
     "Comment": "To be edited during test session",
-    "BackgroundImage": "/boards/board-background.jpg",
-    "Columns": []
+    "BackgroundImage": "/boards/board-background.jpg"
   },
   {
     "Board_ID": "5",
@@ -151,112 +47,7 @@
     "Invited_User_ID": "9",
     "Status": "Existing",
     "Comment": "To test invited user permissions",
-    "BackgroundImage": "/boards/board-background.jpg",
-    "Columns": [
-      
-        {
-          "Column_ID": "6",
-          "Column_Name": "Column#6",
-          "Board_ID": "5",
-          "Status": "Existing",
-          "Comment": "To test invited user permissions/integration testing",
-          "Cards": [
-            {
-              "Card_ID": "7",
-              "Card_Name": "Card#7",
-              "Column_ID": "6",
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned_User_ID": "2",
-              "Status": "To_Be_Created",
-              "Comment": "To be created by invited user"
-            },
-            {
-              "Card_ID": "8",
-              "Card_Name": "Card#8",
-              "Column_ID": "6",
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned_User_ID": "2",
-              "Status": "Existing",
-              "Comment": "To be deleted by invited user"
-            },
-            {
-              "Card_ID": "9",
-              "Card_Name": "Card#9",
-              "Column_ID": "6",
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned_User_ID": "2",
-              "Status": "Existing",
-              "Comment": "To be edited by invited user (Edit name, description, label, assigning)"
-            },
-            {
-              "Card_ID": "10",
-              "Card_Name": "Card#10",
-              "Column_ID": "6",
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned_User_ID": "2",
-              "Status": "Existing",
-              "Comment": "To be moved by invited user"
-            },
-            {
-              "Card_ID": "11",
-              "Card_Name": "Card#11",
-              "Column_ID": "6",
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned_User_ID": "2",
-              "Status": "Existing",
-              "Comment": "Users will not interact with this card"
-            }
-          ]
-        },
-        {
-          "Column_ID": "7",
-          "Column_Name": "Column#7",
-          "Board_ID": "5",
-          "Status": "Existing",
-          "Comment": "To be moved by invited user"
-        },
-        {
-          "Column_ID": "8",
-          "Column_Name": "Column#8",
-          "Board_ID": "5",
-          "Status": "Existing",
-          "Comment": "To be edited by invited user"
-        },
-        {
-          "Column_ID": "9",
-          "Column_Name": "Column#9",
-          "Board_ID": "5",
-          "Status": "Existing",
-          "Comment": "To be deleted by invited user"
-        },
-        {
-          "Column_ID": "10",
-          "Column_Name": "Column#10",
-          "Board_ID": "5",
-          "Status": "Existing",
-          "Comment": "Invited user will create card within"
-        },
-        {
-          "Column_ID": "11",
-          "Column_Name": "Column#11",
-          "Board_ID": "5",
-          "Status": "Existing",
-          "Comment": "Users will not interact with this column"
-        },
-        {
-          "Column_ID": "12",
-          "Column_Name": "Column#12",
-          "Board_ID": "5",
-          "Status": "Existing",
-          "Comment": "Users will not interact with this column"
-        }
-      ]
-    
+    "BackgroundImage": "/boards/board-background.jpg"
   },
   {
     "Board_ID": "6",
@@ -266,8 +57,7 @@
     "Invited_User_ID": "/",
     "Status": "Existing",
     "Comment": "To not be edited/deleted",
-    "BackgroundImage": "/boards/board-background.jpg",
-    "Columns": []
+    "BackgroundImage": "/boards/board-background.jpg"
   },
   {
     "Board_ID": "7",
@@ -277,7 +67,6 @@
     "Invited_User_ID": "8",
     "Status": "Existing",
     "Comment": "To be deleted by invited user",
-    "BackgroundImage": "/boards/board-background.jpg",
-    "Columns": []
+    "BackgroundImage": "/boards/board-background.jpg"
   }
 ]

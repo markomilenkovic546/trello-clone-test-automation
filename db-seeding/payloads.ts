@@ -1,8 +1,11 @@
-import { CreateBoardPayload, LoginPayload, CreateColumnPayload, CreateCardPayload } from "payload-models";
-const boards = require("./cypress/fixtures/e2e-testing-test-data/boards.json");
-const users = require("./cypress/fixtures/e2e-testing-test-data/users.json");
-const columns = require("./cypress/fixtures/e2e-testing-test-data/columns.json");
-const cards = require("./cypress/fixtures/e2e-testing-test-data/cards.json");
+import { CreateBoardPayload, LoginPayload, CreateColumnPayload, CreateCardPayload } from "db-seeding/payload-models";
+const path = require('path');
+
+const cards = require(path.join(__dirname, '../cypress/fixtures/e2e-testing-test-data/cards.json'));
+
+const users = require(path.join(__dirname, '../cypress/fixtures/e2e-testing-test-data/users.json'));
+const boards = require(path.join(__dirname, '../cypress/fixtures/e2e-testing-test-data/boards.json'));
+const columns = require(path.join(__dirname, '../cypress/fixtures/e2e-testing-test-data/columns.json'));
 
 // Login user with ID: 2
 export const loginUser2Payload: LoginPayload = {
@@ -75,7 +78,7 @@ export const createColumn1Payload: CreateColumnPayload = {
   dateCreated: new Date().toLocaleString(),
   userId: users[1].User_ID,
   sequence: 1,
-}
+};
 
 // Create column with ID: 2
 export const createColumn2Payload: CreateColumnPayload = {
@@ -85,7 +88,7 @@ export const createColumn2Payload: CreateColumnPayload = {
   dateCreated: new Date().toLocaleString(),
   userId: users[1].User_ID,
   sequence: 1,
-}
+};
 
 // Create column with ID: 3
 export const createColumn3Payload: CreateColumnPayload = {
@@ -95,7 +98,7 @@ export const createColumn3Payload: CreateColumnPayload = {
   dateCreated: new Date().toLocaleString(),
   userId: users[1].User_ID,
   sequence: 1,
-}
+};
 
 // Create column with ID: 5
 export const createColumn5Payload: CreateColumnPayload = {
@@ -105,7 +108,7 @@ export const createColumn5Payload: CreateColumnPayload = {
   dateCreated: new Date().toLocaleString(),
   userId: users[1].User_ID,
   sequence: 1,
-}
+};
 
 // Create column with ID: 6
 export const createColumn6Payload: CreateColumnPayload = {
@@ -115,7 +118,7 @@ export const createColumn6Payload: CreateColumnPayload = {
   dateCreated: new Date().toLocaleString(),
   userId: users[1].User_ID,
   sequence: 1,
-}
+};
 
 // Create column with ID: 7
 export const createColumn7Payload: CreateColumnPayload = {
@@ -125,7 +128,7 @@ export const createColumn7Payload: CreateColumnPayload = {
   dateCreated: new Date().toLocaleString(),
   userId: users[1].User_ID,
   sequence: 1,
-}
+};
 
 // Create column with ID: 8
 export const createColumn8Payload: CreateColumnPayload = {
@@ -135,7 +138,7 @@ export const createColumn8Payload: CreateColumnPayload = {
   dateCreated: new Date().toLocaleString(),
   userId: users[1].User_ID,
   sequence: 1,
-}
+};
 
 // Create column with ID: 9
 export const createColumn9Payload: CreateColumnPayload = {
@@ -145,7 +148,7 @@ export const createColumn9Payload: CreateColumnPayload = {
   dateCreated: new Date().toLocaleString(),
   userId: users[1].User_ID,
   sequence: 1,
-}
+};
 
 // Create column with ID: 10
 export const createColumn10Payload: CreateColumnPayload = {
@@ -155,7 +158,7 @@ export const createColumn10Payload: CreateColumnPayload = {
   dateCreated: new Date().toLocaleString(),
   userId: users[1].User_ID,
   sequence: 1,
-}
+};
 
 // Create column with ID: 11
 export const createColumn11Payload: CreateColumnPayload = {
@@ -165,7 +168,7 @@ export const createColumn11Payload: CreateColumnPayload = {
   dateCreated: new Date().toLocaleString(),
   userId: users[1].User_ID,
   sequence: 1,
-}
+};
 
 // Create column with ID: 12
 export const createColumn12Payload: CreateColumnPayload = {
@@ -175,8 +178,7 @@ export const createColumn12Payload: CreateColumnPayload = {
   dateCreated: new Date().toLocaleString(),
   userId: users[1].User_ID,
   sequence: 1,
-}
-
+};
 
 //======Create Card Payloads=====//
 
@@ -191,7 +193,7 @@ export const createCard1Payload: CreateCardPayload = {
   userId: users[1].User_ID,
   assignedTo: users[1].User_ID,
   sequence: 1,
-}
+};
 
 export const createCard3Payload: CreateCardPayload = {
   id: cards[2].Card_ID,
@@ -204,7 +206,7 @@ export const createCard3Payload: CreateCardPayload = {
   userId: users[1].User_ID,
   assignedTo: users[1].User_ID,
   sequence: 1,
-}
+};
 
 export const createCard4Payload: CreateCardPayload = {
   id: cards[3].Card_ID,
@@ -217,7 +219,7 @@ export const createCard4Payload: CreateCardPayload = {
   userId: users[1].User_ID,
   assignedTo: users[1].User_ID,
   sequence: 1,
-}
+};
 
 export const createCard5Payload: CreateCardPayload = {
   id: cards[4].Card_ID,
@@ -230,8 +232,7 @@ export const createCard5Payload: CreateCardPayload = {
   userId: users[1].User_ID,
   assignedTo: users[1].User_ID,
   sequence: 1,
-}
-
+};
 
 export const createCard6Payload: CreateCardPayload = {
   id: cards[5].Card_ID,
@@ -244,7 +245,7 @@ export const createCard6Payload: CreateCardPayload = {
   userId: users[1].User_ID,
   assignedTo: users[1].User_ID,
   sequence: 1,
-}
+};
 
 export const createCard8Payload: CreateCardPayload = {
   id: cards[7].Card_ID,
@@ -257,7 +258,7 @@ export const createCard8Payload: CreateCardPayload = {
   userId: users[1].User_ID,
   assignedTo: users[1].User_ID,
   sequence: 1,
-}
+};
 
 export const createCard9Payload: CreateCardPayload = {
   id: cards[8].Card_ID,
@@ -270,7 +271,7 @@ export const createCard9Payload: CreateCardPayload = {
   userId: users[1].User_ID,
   assignedTo: users[1].User_ID,
   sequence: 1,
-}
+};
 
 export const createCard10Payload: CreateCardPayload = {
   id: cards[9].Card_ID,
@@ -283,7 +284,7 @@ export const createCard10Payload: CreateCardPayload = {
   userId: users[1].User_ID,
   assignedTo: users[1].User_ID,
   sequence: 1,
-}
+};
 
 export const createCard11Payload: CreateCardPayload = {
   id: cards[10].Card_ID,
@@ -296,4 +297,39 @@ export const createCard11Payload: CreateCardPayload = {
   userId: users[1].User_ID,
   assignedTo: users[1].User_ID,
   sequence: 1,
-}
+};
+
+export const createBoardPayloads = [
+  createBoard1Payload,
+  createBoard3Payload,
+  createBoard4Payload,
+  createBoard5Payload,
+  createBoard6Payload,
+  createBoard7Payload,
+];
+
+export const createColumnPayloads = [
+  createColumn1Payload,
+  createColumn2Payload,
+  createColumn3Payload,
+  createColumn5Payload,
+  createColumn6Payload,
+  createColumn7Payload,
+  createColumn8Payload,
+  createColumn9Payload,
+  createColumn10Payload,
+  createColumn11Payload,
+  createColumn12Payload,
+];
+
+export const createCardPayloads = [
+  createCard1Payload,
+  createCard3Payload,
+  createCard4Payload,
+  createCard5Payload,
+  createCard6Payload,
+  createCard8Payload,
+  createCard9Payload,
+  createCard10Payload,
+  createCard11Payload,
+];
