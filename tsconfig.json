@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "module": "CommonJS",
     "lib": ["es5", "dom"],
     "types": ["cypress", "node"],
     "resolveJsonModule": true,
@@ -11,7 +12,8 @@
       "@login-page/*": ["cypress/POM/*"],
       "@side-navigation/*": ["cypress/POM/*"],
       "@homepage/*": ["cypress/POM/*"],
-      "@fixtures/*": ["cypress/fixtures/e2e-testing-test-data/*"]
+      "@fixtures/*": ["cypress/fixtures/e2e-testing-test-data/*"],
+      "@boards/*": ["cypress/fixtures/e2e-testing-test-data/*"]
     }
   },
   "include": ["**/*.ts"]

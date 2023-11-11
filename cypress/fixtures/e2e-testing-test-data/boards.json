@@ -1,276 +1,72 @@
 [
   {
-    "Board ID": 1,
-    "Board Name": "Web Shop",
-    "Board Owner - ID": 2,
-    "Board Owner": "Wanda Peters",
-    "Invited User ID": 8,
+    "Board_ID": "1",
+    "Board_Name": "Board#1",
+    "Board_Owner_ID": "2",
+    "Board_Owner": "Wanda Peters",
+    "Invited_User_ID": "8",
     "Status": "Existing",
     "Comment": "To navigate to the board",
-    "Columns": [
-      [
-        {
-          "Column ID": 1,
-          "Column Name": "Task 1",
-          "Board ID": 1,
-          "Status": "Existing",
-          "Comment": "Cards will be created within this column",
-          "Cards": [
-            {
-              "Card ID": 1,
-              "Card Name": "Project Config",
-              "Column ID": 1,
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned User ID": 2,
-              "Status": "Existing",
-              "Comment": "To be moved during testing (drag and drop)"
-            },
-            {
-              "Card ID": 2,
-              "Card Name": "Homepage development",
-              "Column ID": 1,
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned User ID": 2,
-              "Status": "To Be Created",
-              "Comment": "To be created during testing"
-            },
-            {
-              "Card ID": 3,
-              "Card Name": "Content optimization",
-              "Column ID": 1,
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned User ID": 2,
-              "Status": "Existing",
-              "Comment": "To be deleted during testing"
-            },
-            {
-              "Card ID": 4,
-              "Card Name": "Content review",
-              "Column ID": 1,
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned User ID": 2,
-              "Status": "Existing",
-              "Comment": "To be edited during testing"
-            },
-            {
-              "Card ID": 5,
-              "Card Name": "Complete Market Research Report",
-              "Column ID": 1,
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned User ID": 2,
-              "Status": "Existing",
-              "Comment": "To be edited during testing (Edit name, description, label, assinging)"
-            },
-            {
-              "Card ID": 6,
-              "Card Name": "Organize Office Supplies",
-              "Column ID": 1,
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned User ID": 2,
-              "Status": "Existing",
-              "Comment": "User will not interact with this card"
-            }
-          ]
-        },
-        {
-          "Column ID": 2,
-          "Column Name": "Task 2",
-          "Board ID": 1,
-          "Status": "Existing",
-          "Comment": "To be edited during testing"
-        },
-        {
-          "Column ID": 3,
-          "Column Name": "Task 3",
-          "Board ID": 1,
-          "Status": "Existing",
-          "Comment": "To be deleted during testing"
-        },
-        {
-          "Column ID": 4,
-          "Column Name": "Task 4",
-          "Board ID": 1,
-          "Status": "To Be Created",
-          "Comment": "To be created during testing"
-        },
-        {
-          "Column ID": 5,
-          "Column Name": "Task 5",
-          "Board ID": 1,
-          "Status": "Existing",
-          "Comment": "To be moved"
-        }
-      ]
-    ]
+    "BackgroundImage": "/boards/board-background.jpg"
   },
   {
-    "Board ID": 2,
-    "Board Name": "PetStop",
-    "Board Owner - ID": 2,
-    "Board Owner": "Wanda Peters",
-    "Invited User ID": "/",
-    "Status": "To Be Created",
+    "Board_ID": "2",
+    "Board_Name": "Board#2",
+    "Board_Owner_ID": "2",
+    "Board_Owner": "Wanda Peters",
+    "Invited_User_ID": "/",
+    "Status": "To_Be_Created",
     "Comment": "To be created during testing",
-    "Columns": []
+    "BackgroundImage": "/boards/board-background.jpg"
   },
   {
-    "Board ID": 3,
-    "Board Name": "Mobile Service",
-    "Board Owner - ID": 2,
-    "Board Owner": "Wanda Peters",
-    "Invited User ID": "/",
+    "Board_ID": "3",
+    "Board_Name": "Board#3",
+    "Board_Owner_ID": "2",
+    "Board_Owner": "Wanda Peters",
+    "Invited_User_ID": "/",
     "Status": "Existing",
     "Comment": "To be deleted during test session",
-    "Columns": []
+    "BackgroundImage": "/boards/board-background.jpg"
   },
   {
-    "Board ID": 4,
-    "Board Name": "Magic NFTs",
-    "Board Owner - ID": 2,
-    "Board Owner": "Wanda Peters",
-    "Invited User ID": "/",
+    "Board_ID": "4",
+    "Board_Name": "Board#4",
+    "Board_Owner_ID": "2",
+    "Board_Owner": "Wanda Peters",
+    "Invited_User_ID": "/",
     "Status": "Existing",
     "Comment": "To be edited during test session",
-    "Columns": []
+    "BackgroundImage": "/boards/board-background.jpg"
   },
   {
-    "Board ID": 5,
-    "Board Name": "Sport Portal",
-    "Board Owner - ID": 2,
-    "Board Owner": "Wanda Peters",
-    "Invited User ID": 9,
+    "Board_ID": "5",
+    "Board_Name": "Board#5",
+    "Board_Owner_ID": "2",
+    "Board_Owner": "Wanda Peters",
+    "Invited_User_ID": "9",
     "Status": "Existing",
-    "Comment": "To test invited user permisions",
-    "Columns": [
-      [
-        {
-          "Column ID": 6,
-          "Column Name": "Task 6",
-          "Board ID": 5,
-          "Status": "Existing",
-          "Comment": "To test invited user permisions/integration testing",
-          "Cards": [
-            {
-              "Card ID": 7,
-              "Card Name": "Develop Social Media Content",
-              "Column ID": 6,
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned User ID": 2,
-              "Status": "To Be Created",
-              "Comment": "To be created by invited user"
-            },
-            {
-              "Card ID": 8,
-              "Card Name": "Create Monthly Budget",
-              "Column ID": 6,
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned User ID": 2,
-              "Status": "Existing",
-              "Comment": "To be deleted by invited user"
-            },
-            {
-              "Card ID": 9,
-              "Card Name": "Run Productivity Workshop",
-              "Column ID": 6,
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned User ID": 2,
-              "Status": "Existing",
-              "Comment": "To be edited by invited user (Edit name, description, label, assinging)"
-            },
-            {
-              "Card ID": 10,
-              "Card Name": "Conduct Customer Surveyst",
-              "Column ID": 6,
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned User ID": 2,
-              "Status": "Existing",
-              "Comment": "To be moved by invited user"
-            },
-            {
-              "Card ID": 11,
-              "Card Name": "Research New Marketing Strategies",
-              "Column ID": 6,
-              "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-              "Label": "Performance",
-              "Assigned User ID": 2,
-              "Status": "Existing",
-              "Comment": "Users will not interact with this card"
-            }
-          ]
-        },
-        {
-          "Column ID": 7,
-          "Column Name": "Task 7",
-          "Board ID": 5,
-          "Status": "Existing",
-          "Comment": "To be moved my invited user"
-        },
-        {
-          "Column ID": 8,
-          "Column Name": "Task 8",
-          "Board ID": 5,
-          "Status": "Existing",
-          "Comment": "To be edited by invited user"
-        },
-        {
-          "Column ID": 9,
-          "Column Name": "Task 9",
-          "Board ID": 5,
-          "Status": "Existing",
-          "Comment": "To be deleted by invited user"
-        },
-        {
-          "Column ID": 10,
-          "Column Name": "Task 10",
-          "Board ID": 5,
-          "Status": "Existing",
-          "Comment": "Invited user will create card within"
-        },
-        {
-          "Column ID": 11,
-          "Column Name": "Task 11",
-          "Board ID": 5,
-          "Status": "Existing",
-          "Comment": "Users will not interact with this column"
-        },
-        {
-          "Column ID": 12,
-          "Column Name": "Task 12",
-          "Board ID": 5,
-          "Status": "Existing",
-          "Comment": "Users will not interact with this column"
-        }
-      ]
-    ]
+    "Comment": "To test invited user permissions",
+    "BackgroundImage": "/boards/board-background.jpg"
   },
   {
-    "Board ID": 6,
-    "Board Name": "News Portal",
-    "Board Owner - ID": 2,
-    "Board Owner": "Wanda Peters",
-    "Invited User ID": "/",
+    "Board_ID": "6",
+    "Board_Name": "Board#6",
+    "Board_Owner_ID": "2",
+    "Board_Owner": "Wanda Peters",
+    "Invited_User_ID": "/",
     "Status": "Existing",
     "Comment": "To not be edited/deleted",
-    "Columns": []
+    "BackgroundImage": "/boards/board-background.jpg"
   },
   {
-    "Board ID": 7,
-    "Board Name": "Cafe",
-    "Board Owner - ID": 2,
-    "Board Owner": "Wanda Peters",
-    "Invited User ID": 8,
+    "Board_ID": "7",
+    "Board_Name": "Board#7",
+    "Board_Owner_ID": "2",
+    "Board_Owner": "Wanda Peters",
+    "Invited_User_ID": "8",
     "Status": "Existing",
     "Comment": "To be deleted by invited user",
-    "Columns": []
+    "BackgroundImage": "/boards/board-background.jpg"
   }
 ]

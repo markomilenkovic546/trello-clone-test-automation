@@ -12,9 +12,7 @@ class Boards {
         createButton: () => Cypress.Chainable<JQuery<HTMLElement>>;
     }
 
-    actions: {
-        clickOnThe
-    }
+    
   };
 
   constructor() {

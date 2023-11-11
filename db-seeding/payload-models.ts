@@ -1,5 +1,5 @@
 // User Registration payload - POST {{baseUrl}}/register
-interface RegistrationPayload {
+  export interface RegistrationPayload {
   id: string;
   email: string;
   password: string;
@@ -8,13 +8,13 @@ interface RegistrationPayload {
 }
 
 // User Login payload - POST {{baseUrl}}/login
-interface LoginPayload {
+ export interface LoginPayload {
   email: string;
   password: string;
 }
 
 // Create Board payload - POST {{baseUrl}}/boards
-interface CreateBoardPayload {
+export interface CreateBoardPayload {
   _id: string;
   name: string;
   dateCreated: string;
@@ -23,7 +23,7 @@ interface CreateBoardPayload {
 }
 
 // Update Board payload - PATCH {{baseUrl}}/boards/{{board_id}}
-interface CreateBoardPayload {
+export interface UpdateBoardPayload {
   _id: string;
   name: string;
   dateCreated: string;
@@ -32,7 +32,7 @@ interface CreateBoardPayload {
 }
 
 // Create Column payload - POST {{baseUrl}}/boards/{{board_id}}/columns
-interface CreateCardPayload {
+export interface CreateColumnPayload {
   id: string;
   boardId: string;
   columnName: string;
@@ -42,14 +42,14 @@ interface CreateCardPayload {
 }
 
 // Update Column payload - PATCH {{baseUrl}}/boards/{{board_id}}/columns/{{column_id}}
-interface UpdateColumnPayload {
+export interface UpdateColumnPayload {
   _id: string;
   boardName: string;
   columnName: string;
 }
 
 // Create Card payload - POST {{baseUrl}}/boards/{{board_id}}/columns/{{column_id}}/cards
-interface CreateCardPayload {
+export interface CreateCardPayload {
   id: string;
   columnId: string;
   boardId: string;
@@ -62,8 +62,8 @@ interface CreateCardPayload {
   sequence: number;
 }
 
-// Update Card payload - PATCH{{baseUrl}}/boards/{{board_id}}/columns/{{column_id}}
-interface UpdateCardData {
+// Update Card payload - PATCH{{baseUrl}}/boards/{{board_id}}/cards/{{card_id}}
+export interface UpdateCardData {
   _id: string;
   title: string;
   description: string;
@@ -72,7 +72,7 @@ interface UpdateCardData {
 }
 
 // Invite User to Board payload - POST {{baseUrl}}/boards/mail
-interface InviteUserPayload {
+export interface InviteUserPayload {
   email: string;
   boardId: string;
 }
