@@ -1,9 +1,9 @@
 const axios = require("axios");
 require("dotenv").config();
-const path = require('path');
-const users = require(path.join(__dirname, '../cypress/fixtures/e2e-testing-test-data/users.json'));
-const boards = require(path.join(__dirname, '../cypress/fixtures/e2e-testing-test-data/boards.json'));
-const columns = require(path.join(__dirname, '../cypress/fixtures/e2e-testing-test-data/columns.json'));
+const path = require("path");
+const users = require(path.join(__dirname, "../cypress/fixtures/e2e-testing-test-data/users.json"));
+const boards = require(path.join(__dirname, "../cypress/fixtures/e2e-testing-test-data/boards.json"));
+const columns = require(path.join(__dirname, "../cypress/fixtures/e2e-testing-test-data/columns.json"));
 import { loginUser2Payload, createBoardPayloads, createColumnPayloads, createCardPayloads } from "./payloads";
 
 const defaultAxios = axios.create({
@@ -45,6 +45,7 @@ export const deleteBoard = async (loginPayload: object, boardID: string) => {
 
     const deleteBoardResponse = await defaultAxios.delete(`${process.env.API_BASE_URL}/boards/${boardID}`);
     console.log(deleteBoardResponse.data);
+    console.log(boardID);
   } catch (error) {
     console.error(error);
     return null;
@@ -91,7 +92,7 @@ export const deleteColumn = async (loginPayload: any, boardID: string, columnID:
       `${process.env.API_BASE_URL}/boards/${boardID}/columns/${columnID}`,
       headersConfig
     );
-    console.log(deleteColumnResponse.data);
+    console.log(`${deleteColumnResponse.data}`);
   } catch (error) {
     console.error(error);
     return null;
@@ -164,21 +165,17 @@ export const seedDB = async () => {
 };
 
 export const clearDB = async () => {
-  boards.forEach((board: any, index) => {
-    setTimeout(() => {
-      deleteBoard(loginUser2Payload, board.Board_ID);
-    }, index * 2000);
-  });
+  return Promise.all(
+    boards.map(async (board: any) => {
+      await deleteBoard(loginUser2Payload, board.Board_ID);
+    })
+  );
 };
 
-function main() {
-  // Clear test data in database
-  clearDB();
+async function main() {
+  await clearDB();
 
-  setTimeout(() => {
-    //Seed database with test data
-    seedDB();
-  }, 20000);
+  seedDB();
 }
 
 main();

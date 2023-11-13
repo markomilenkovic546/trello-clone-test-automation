@@ -13,7 +13,9 @@
       "@side-navigation/*": ["cypress/POM/*"],
       "@homepage/*": ["cypress/POM/*"],
       "@fixtures/*": ["cypress/fixtures/e2e-testing-test-data/*"],
-      "@boards/*": ["cypress/fixtures/e2e-testing-test-data/*"]
+      "@boards/*": ["cypress/fixtures/e2e-testing-test-data/*"],
+      "@board-single-page/*": ["cypress/POM/*"],
+      "@board-archive-page/*": ["cypress/POM/*"],
     }
   },
   "include": ["**/*.ts"]
