@@ -16,6 +16,8 @@
       "@boards/*": ["cypress/fixtures/e2e-testing-test-data/*"],
       "@board-single-page/*": ["cypress/POM/*"],
       "@board-archive-page/*": ["cypress/POM/*"],
+      "@payloads/*": ["db-seeding/*"],
+
     }
   },
   "include": ["**/*.ts"]

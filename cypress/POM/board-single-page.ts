@@ -157,7 +157,7 @@ class BoardSinglePage {
         advanceTab: () => cy.get('button:contains("Advance")'),
         boardNameFiled: () => cy.get("input.chakra-input.css-n9lnwn"),
         saveButton: () => cy.get(".chakra-button.css-pmbx0z").contains("Save"),
-        deleteButton: () => cy.get(".chakra-button.css-pmbx0z").contains("Delete"),
+        deleteButton: () => cy.get(".chakra-button.css-1w3ruwl").contains("Delete"),
         closeModalButton: () => cy.get('[aria-label="Close"]'),
       },
 

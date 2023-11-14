@@ -144,6 +144,29 @@ export const deleteCard = async (loginPayload: any, boardID: string, cardID: str
   }
 };
 
+// Get all boards via API
+export const getBoards = async (loginPayload: object, userID: any) => {
+  try {
+    const loginResponse = await defaultAxios.post(`${process.env.API_BASE_URL}/login`, loginPayload);
+    const token = await loginResponse.data.token;
+    const headersConfig = {
+      headers: {
+        Cookie: `token=${token}`,
+      },
+    };
+
+    const getBoardsResponse = await defaultAxios.get(
+      `${process.env.API_BASE_URL}/boards?userid=${userID}`,
+      headersConfig
+    );
+    //console.log(getBoardsResponse.data);
+    return getBoardsResponse.data;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
+
 export const seedDB = async () => {
   createBoardPayloads.forEach((payload, index) => {
     setTimeout(() => {
@@ -165,9 +188,10 @@ export const seedDB = async () => {
 };
 
 export const clearDB = async () => {
+  const boardsToDelete = await getBoards(loginUser2Payload, users[1].User_ID);
   return Promise.all(
-    boards.map(async (board: any) => {
-      await deleteBoard(loginUser2Payload, board.Board_ID);
+    boardsToDelete.map(async (board: any) => {
+      await deleteBoard(loginUser2Payload, board._id);
     })
   );
 };
