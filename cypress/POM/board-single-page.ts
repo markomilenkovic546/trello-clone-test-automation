@@ -152,24 +152,24 @@ class BoardSinglePage {
       },
 
       boardSettingsModal: {
-        modalTitle: () => cy.get("#chakra-modal--header-11").contains("Boards Settings"),
+        modalTitle: () => cy.get("header:contains('Boards Settings')"),
         basicTab: () => cy.get('button:contains("Basic")'),
         advanceTab: () => cy.get('button:contains("Advance")'),
         boardNameFiled: () => cy.get("input.chakra-input.css-n9lnwn"),
-        saveButton: () => cy.get(".chakra-button.css-pmbx0z").contains("Save"),
-        deleteButton: () => cy.get(".chakra-button.css-1w3ruwl").contains("Delete"),
+        saveButton: () => cy.get(".chakra-button.css-pmbx0z:contains('Save)"),
+        deleteButton: () => cy.get(".chakra-button.css-1w3ruwl:contains('Delete)"),
         closeModalButton: () => cy.get('[aria-label="Close"]'),
       },
 
       inviteUserModal: {
-        modalTitle: () => cy.get("#chakra-modal--header-9").contains("Invite User"),
+        modalTitle: () => cy.get("header:contains('Invite User)"),
         emailField: () => cy.get("input.chakra-input.css-n9lnwn"),
         inviteButton: () => cy.get('button:contains("Invite")'),
         closeModalButton: () => cy.get('[aria-label="Close"]'),
       },
 
       customizeBoardModal: {
-        modalTitle: () => cy.get("#chakra-modal--header-13").contains("Choose background image"),
+        modalTitle: () => cy.get("header:contains('Choose background image')"),
         searchField: () => cy.get("input.chakra-input.css-v16ymt"),
         searchButton: () => cy.get('button:contains("Search")'),
         imageItmesList: () => cy.get(".css-1hdm3lc"),

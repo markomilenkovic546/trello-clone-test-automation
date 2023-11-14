@@ -6,7 +6,6 @@ import * as boards from "@fixtures/boards.json";
 const sideNavigation = new SideNavigation();
 const boardsPage = new BoardsPage();
 const boardSinglePage = new BoardSinglePage();
-import { loginUser2Payload, createBoardPayloads, createColumnPayloads, createCardPayloads } from "@payloads/payloads";
 
 beforeEach(function () {
   cy.visit("/");
@@ -23,6 +22,47 @@ describe("Tests which cover functionalites related to Board Management ", () => 
     boardsPage.actions.clickOnBoardItem(boards[0].Board_Name);
     // Verify that Board title is correct
     boardSinglePage.elements.header.boardTitle().contains(boards[0].Board_Name);
+  });
+
+  it.only("User can navigate to from Board Single Page to homepage", function () {
+    //Click on the "Boards" button
+    sideNavigation.actions.clickOnBoardsButton();
+    // Verify that "Boards" page is open
+    cy.url().should("include", "/boards");
+    // Click on the specific board item
+    boardsPage.actions.clickOnBoardItem(boards[0].Board_Name);
+    // Verify that Board title is correct
+    boardSinglePage.elements.header.boardTitle().contains(boards[0].Board_Name);
+    // Click one the "Home" button in the header
+    boardSinglePage.actions.header.clickOnHomeButton();
+    // Verify that "Home" page is open
+    cy.url().should("include", "/home");
+  });
+
+  it.only("User can navigate from Board Single Page to Boards page", function () {
+    //Click on the "Boards" button
+    sideNavigation.actions.clickOnBoardsButton();
+    // Verify that "Boards" page is open
+    cy.url().should("include", "/boards");
+    // Click on the specific board item
+    boardsPage.actions.clickOnBoardItem(boards[0].Board_Name);
+    // Verify that Board title is correct
+    boardSinglePage.elements.header.boardTitle().contains(boards[0].Board_Name);
+    // Click one the "Home" button in the header
+    boardSinglePage.actions.header.clickOnBoardsButton();
+    // Verify that "Boards" page is open
+    cy.url().should("include", "/boards");
+  });
+
+  it.only("User can open a 'Create board' modal", function () {
+    //Click on the "Boards" button
+    sideNavigation.actions.clickOnBoardsButton();
+    // Verify that "Boards" page is open
+    cy.url().should("include", "/boards");
+    // Click on the "Create a board" button
+    boardsPage.actions.clickOnCreateBoardButton();
+    // Verify that "Create board" modal is open
+    boardsPage.elements.createBoardModal.modalTitle().should('be.visible')
   });
 
   it("User can create a new board", function () {

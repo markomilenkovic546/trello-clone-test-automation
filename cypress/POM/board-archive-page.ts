@@ -8,6 +8,7 @@ class BoardsPage {
     boardItem: (boardName: string) => Cypress.Chainable<JQuery<HTMLElement>>;
     boardItemList: () => Cypress.Chainable<JQuery<HTMLElement>>;
     createBoardModal: {
+      modalTitle: () => Cypress.Chainable<JQuery<HTMLElement>>;
       boardNameInputField: () => Cypress.Chainable<JQuery<HTMLElement>>;
       closeButton: () => Cypress.Chainable<JQuery<HTMLElement>>;
       createButton: () => Cypress.Chainable<JQuery<HTMLElement>>;
@@ -33,6 +34,7 @@ class BoardsPage {
       boardItem: (boardName) => cy.get(`.css-aeel9r:contains('${boardName}')`),
       boardItemList: () => cy.get('.css-aeel9r'),
       createBoardModal: {
+        modalTitle: () => cy.get('header:contains("Create board")'),
         boardNameInputField: () => cy.get('input[placeholder="Board name"]'),
         closeButton: () => cy.get('button[aria-label="Close"]'),
         createButton: () => cy.get('.chakra-button.css-1h7v26a:contains("Create")'),
