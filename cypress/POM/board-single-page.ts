@@ -152,17 +152,17 @@ class BoardSinglePage {
       },
 
       boardSettingsModal: {
-        modalTitle: () => cy.get("header:contains('Boards Settings')"),
+        modalTitle: () => cy.get("header:contains('Board Settings')"),
         basicTab: () => cy.get('button:contains("Basic")'),
         advanceTab: () => cy.get('button:contains("Advance")'),
         boardNameFiled: () => cy.get("input.chakra-input.css-n9lnwn"),
-        saveButton: () => cy.get(".chakra-button.css-pmbx0z:contains('Save)"),
-        deleteButton: () => cy.get(".chakra-button.css-1w3ruwl:contains('Delete)"),
+        saveButton: () => cy.get(".chakra-button.css-pmbx0z:contains('Save')"),
+        deleteButton: () => cy.get(".chakra-button.css-1w3ruwl:contains('Delete')"),
         closeModalButton: () => cy.get('[aria-label="Close"]'),
       },
 
       inviteUserModal: {
-        modalTitle: () => cy.get("header:contains('Invite User)"),
+        modalTitle: () => cy.get("header:contains('Invite User')"),
         emailField: () => cy.get("input.chakra-input.css-n9lnwn"),
         inviteButton: () => cy.get('button:contains("Invite")'),
         closeModalButton: () => cy.get('[aria-label="Close"]'),

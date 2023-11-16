@@ -12,7 +12,7 @@ beforeEach(function () {
   cy.login(users[1].Email, users[1].Password);
 });
 
-describe("Tests which cover functionalites related to Board Management ", () => {
+describe("Navigation ", () => {
   it("User can navigate to Board Single Page", function () {
     //Click on the "Boards" button
     sideNavigation.actions.clickOnBoardsButton();
@@ -24,7 +24,7 @@ describe("Tests which cover functionalites related to Board Management ", () => 
     boardSinglePage.elements.header.boardTitle().contains(boards[0].Board_Name);
   });
 
-  it.only("User can navigate to from Board Single Page to homepage", function () {
+  it("User can navigate to from Board Single Page to homepage", function () {
     //Click on the "Boards" button
     sideNavigation.actions.clickOnBoardsButton();
     // Verify that "Boards" page is open
@@ -39,7 +39,7 @@ describe("Tests which cover functionalites related to Board Management ", () => 
     cy.url().should("include", "/home");
   });
 
-  it.only("User can navigate from Board Single Page to Boards page", function () {
+  it("User can navigate from Board Single Page to Boards page", function () {
     //Click on the "Boards" button
     sideNavigation.actions.clickOnBoardsButton();
     // Verify that "Boards" page is open
@@ -53,8 +53,10 @@ describe("Tests which cover functionalites related to Board Management ", () => 
     // Verify that "Boards" page is open
     cy.url().should("include", "/boards");
   });
+});
 
-  it.only("User can open a 'Create board' modal", function () {
+describe("Board Creation ", () => {
+  it("User can open a 'Create board' modal", function () {
     //Click on the "Boards" button
     sideNavigation.actions.clickOnBoardsButton();
     // Verify that "Boards" page is open
@@ -62,7 +64,22 @@ describe("Tests which cover functionalites related to Board Management ", () => 
     // Click on the "Create a board" button
     boardsPage.actions.clickOnCreateBoardButton();
     // Verify that "Create board" modal is open
-    boardsPage.elements.createBoardModal.modalTitle().should('be.visible')
+    boardsPage.elements.createBoardModal.modalTitle().should("be.visible");
+  });
+
+  it("User can close a 'Create board' modal", function () {
+    //Click on the "Boards" button
+    sideNavigation.actions.clickOnBoardsButton();
+    // Verify that "Boards" page is open
+    cy.url().should("include", "/boards");
+    // Click on the "Create a board" button
+    boardsPage.actions.clickOnCreateBoardButton();
+    // Verify that "Create board" modal is open
+    boardsPage.elements.createBoardModal.modalTitle().should("be.visible");
+    // Click on the "Close modal" button
+    boardsPage.actions.createBoardModal.clickOnCloseModalButton();
+    // Verify that "Create board" modal is not open
+    boardsPage.elements.createBoardModal.modalTitle().should("not.exist");
   });
 
   it("User can create a new board", function () {
@@ -86,35 +103,41 @@ describe("Tests which cover functionalites related to Board Management ", () => 
     // Verify that Board title is correct
     boardSinglePage.elements.header.boardTitle().contains(boards[1].Board_Name);
   });
+});
 
-  it("User can delete a board", function () {
+describe("Board Settings", () => {
+  it('User can open a "Board settings" modal', function () {
     //Click on the "Boards" button
     sideNavigation.actions.clickOnBoardsButton();
     // Verify that "Boards" page is open
     cy.url().should("include", "/boards");
-    // Count current number of board items
-    boardsPage.elements.boardItemList().then((boardItems) => {
-      const boardCount = boardItems.length;
-      // Click on the specific board item
-      boardsPage.actions.clickOnBoardItem(boards[2].Board_Name);
-      // Verify that Board title is correct
-      boardSinglePage.elements.header.boardTitle().contains(boards[2].Board_Name);
-      // Click on settings button
-      boardSinglePage.actions.header.clickOnSettingsButton();
-      // Click on "Advance tab"
-      boardSinglePage.actions.boardSettingsModal.clickOnAdvanceTab();
-      // Click on "Delete" button
-      boardSinglePage.actions.boardSettingsModal.clickOnDeleteButton();
-      // Verify that "Boards" page is open
-      cy.url().should("include", "/boards");
-      // Verify that expected board item is deleted
-      boardsPage.elements.boardItem(boards[2].Board_Name).should("not.exist");
-      // Verify that only expected item is deleted, and others are still i DB
-      boardsPage.elements.boardItemList().then((boardItemsAfterDelete) => {
-        const boardCountAfterDelete = boardItemsAfterDelete.length;
-        assert(Number(boardCountAfterDelete) == Number(boardCount) - 1, `Only expeted item is deleted}`);
-      });
-    });
+    // Click on the specific board item
+    boardsPage.actions.clickOnBoardItem(boards[0].Board_Name);
+    // Verify that Board title is correct
+    boardSinglePage.elements.header.boardTitle().contains(boards[0].Board_Name);
+    // Click on settings button
+    boardSinglePage.actions.header.clickOnSettingsButton();
+    // Verify that "Board settings" modal is open
+    boardSinglePage.elements.boardSettingsModal.modalTitle().should("be.visible");
+  });
+
+  it('User can close a "Board settings" modal ', function () {
+    //Click on the "Boards" button
+    sideNavigation.actions.clickOnBoardsButton();
+    // Verify that "Boards" page is open
+    cy.url().should("include", "/boards");
+    // Click on the specific board item
+    boardsPage.actions.clickOnBoardItem(boards[0].Board_Name);
+    // Verify that Board title is correct
+    boardSinglePage.elements.header.boardTitle().contains(boards[0].Board_Name);
+    // Click on settings button
+    boardSinglePage.actions.header.clickOnSettingsButton();
+    // Verify that "Board settings" modal is open
+    boardSinglePage.elements.boardSettingsModal.modalTitle().should("be.visible");
+    // Click on "Close modal" button
+    boardSinglePage.actions.boardSettingsModal.clickOnCloseButton();
+    // Verify that "Board settings" modal is not open
+    boardSinglePage.elements.boardSettingsModal.modalTitle().should("not.exist");
   });
 
   it("User can edit a board name", function () {
@@ -152,4 +175,36 @@ describe("Tests which cover functionalites related to Board Management ", () => 
         expect(boardItemsMathingEditedName.length).to.equal(1);
       });
   });
+
+  it("User can delete a board", function () {
+    //Click on the "Boards" button
+    sideNavigation.actions.clickOnBoardsButton();
+    // Verify that "Boards" page is open
+    cy.url().should("include", "/boards");
+    // Count current number of board items
+    boardsPage.elements.boardItemList().then((boardItems) => {
+      const boardCount = boardItems.length;
+      // Click on the specific board item
+      boardsPage.actions.clickOnBoardItem(boards[2].Board_Name);
+      // Verify that Board title is correct
+      boardSinglePage.elements.header.boardTitle().contains(boards[2].Board_Name);
+      // Click on settings button
+      boardSinglePage.actions.header.clickOnSettingsButton();
+      // Click on "Advance tab"
+      boardSinglePage.actions.boardSettingsModal.clickOnAdvanceTab();
+      // Click on "Delete" button
+      boardSinglePage.actions.boardSettingsModal.clickOnDeleteButton();
+      // Verify that "Boards" page is open
+      cy.url().should("include", "/boards");
+      // Verify that expected board item is deleted
+      boardsPage.elements.boardItem(boards[2].Board_Name).should("not.exist");
+      // Verify that only expected item is deleted, and others are still i DB
+      boardsPage.elements.boardItemList().then((boardItemsAfterDelete) => {
+        const boardCountAfterDelete = boardItemsAfterDelete.length;
+        assert(Number(boardCountAfterDelete) == Number(boardCount) - 1, `Only expeted item is deleted}`);
+      });
+    });
+  });
 });
+
+
