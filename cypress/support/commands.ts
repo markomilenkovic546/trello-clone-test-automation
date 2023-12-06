@@ -12,6 +12,9 @@ declare global {
     interface Chainable {
       login(email: string, password: string): Chainable<any>;
       signup(email: string, name: string, password: string, confirmPassword: string): Chainable<any>;
+      getEmailContent(email: string): Chainable<any>;
+      verifyInviteUserRequest(interception: any, user: any, board: any);
+      verifyEmailAndAcceptInvitation(email: string);
     }
   }
 }
@@ -65,4 +68,41 @@ Cypress.Commands.add("signup", (email: string, name: string, password: string, c
   cy.get("body")
     .contains("We've created your account. Redirecting you to login page in 3 seconds")
     .should("be.visible", { timeout: 7000 });
+});
+
+// Verify that user invite request is successful and sent data is correct
+Cypress.Commands.add("verifyInviteUserRequest", (interception: any, user: any, board: any) => {
+  // Verify that response status code is 200
+  cy.wrap(interception).its("response.statusCode").should("eq", 200);
+  // Store the values related to intercepted "invite" API call
+  const requestBody = interception.request.body;
+  const responseBody = interception.response.body;
+  const expectedPayload = {
+    email: user.Email,
+    boardId: board.Board_ID,
+  };
+  const expectedResponseBody = {
+    message: "Email sent sucessfully",
+    status: 200,
+  };
+  console.log(requestBody);
+  console.log(responseBody);
+  expect(requestBody.email).to.equal(expectedPayload.email);
+  expect(requestBody.boardId).to.equal(expectedPayload.boardId);
+  expect(responseBody.message).to.equal(expectedResponseBody.message);
+});
+
+
+Cypress.Commands.add("verifyEmailAndAcceptInvitation", (email: string) => {
+  cy.request("GET", `https://api.testsendr.link/?email=${email}`).then((response) => {
+    const responseBody = response.body;
+    expect(responseBody[0].from).to.equal("dell41ankit@gmail.com");
+    expect(responseBody[0].subject).to.equal("You are invited to join to a trello clone board");
+    const match = responseBody[0].text.match(/\[([^\]]+)\]/);
+    if (match) {
+      const link = match[1];
+      console.log("Extracted Link:", link);
+      cy.visit(link);
+    }
+  });
 });

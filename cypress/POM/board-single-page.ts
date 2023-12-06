@@ -164,7 +164,7 @@ class BoardSinglePage {
       inviteUserModal: {
         modalTitle: () => cy.get("header:contains('Invite User')"),
         emailField: () => cy.get("input.chakra-input.css-n9lnwn"),
-        inviteButton: () => cy.get('button:contains("Invite")'),
+        inviteButton: () => cy.get('.chakra-button.css-16eu9ih'),
         closeModalButton: () => cy.get('[aria-label="Close"]'),
       },
 

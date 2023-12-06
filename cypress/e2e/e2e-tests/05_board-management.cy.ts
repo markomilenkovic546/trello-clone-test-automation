@@ -1,11 +1,13 @@
 import SideNavigation from "@side-navigation/side-navigation-component";
 import BoardSinglePage from "@board-single-page/board-single-page";
 import BoardsPage from "@board-archive-page/board-archive-page";
+import LoginPage from "@login-page/login-page";
 import * as users from "@fixtures/users.json";
 import * as boards from "@fixtures/boards.json";
 const sideNavigation = new SideNavigation();
 const boardsPage = new BoardsPage();
 const boardSinglePage = new BoardSinglePage();
+const loginPage = new LoginPage();
 
 beforeEach(function () {
   cy.visit("/");
@@ -207,4 +209,94 @@ describe("Board Settings", () => {
   });
 });
 
+describe("User Invite", () => {
+  it('User can open an "Invite User" modal', function () {
+    //Click on the "Boards" button
+    sideNavigation.actions.clickOnBoardsButton();
+    // Verify that "Boards" page is open
+    cy.url().should("include", "/boards");
+    // Click on the specific board item
+    boardsPage.actions.clickOnBoardItem(boards[0].Board_Name);
+    // Verify that Board title is correct
+    boardSinglePage.elements.header.boardTitle().contains(boards[0].Board_Name);
+    // Click on the "Invite" button in the header
+    boardSinglePage.actions.header.clickOnInviteButton();
+    // Berify that "Invite USser" modal is open
+    boardSinglePage.elements.inviteUserModal.modalTitle().should("be.visible");
+  });
 
+  it('User can close an "Invite User" modal', function () {
+    //Click on the "Boards" button
+    sideNavigation.actions.clickOnBoardsButton();
+    // Verify that "Boards" page is open
+    cy.url().should("include", "/boards");
+    // Click on the specific board item
+    boardsPage.actions.clickOnBoardItem(boards[0].Board_Name);
+    // Verify that Board title is correct
+    boardSinglePage.elements.header.boardTitle().contains(boards[0].Board_Name);
+    // Click on the "Invite" button in the header
+    boardSinglePage.actions.header.clickOnInviteButton();
+    // Verify that "Invite user" modal is open
+    boardSinglePage.elements.inviteUserModal.modalTitle().should("be.visible");
+    // Click on the close modal button
+    boardSinglePage.actions.inviteUserModal.clickOnCloseModalButton();
+    // Verify that "Invite user" modal is closed
+    boardSinglePage.elements.inviteUserModal.modalTitle().should("not.exist");
+  });
+
+  it.only("User can invite other user to be board member", function () {
+    cy.intercept("POST", " https://trello-clone-one.vercel.app/api/mail").as("invite");
+    // Click on the "Boards" button
+    sideNavigation.actions.clickOnBoardsButton();
+    // Verify that "Boards" page is open
+    cy.url().should("include", "/boards");
+    // Click on the specific board item
+    boardsPage.actions.clickOnBoardItem(boards[0].Board_Name);
+    // Verify that Board title is correct
+    boardSinglePage.elements.header.boardTitle().contains(boards[0].Board_Name);
+    // Click on the "Invite" button in the header
+    boardSinglePage.actions.header.clickOnInviteButton();
+    // Verify that "Invite user" modal is open
+    boardSinglePage.elements.inviteUserModal.modalTitle().should("be.visible");
+    // Type email address into the email field
+    boardSinglePage.actions.inviteUserModal.typeEmail(users[4].Email);
+    // Click on the Invite button
+    boardSinglePage.actions.inviteUserModal.clickOnInviteButton();
+    // Verify that "Invite user" modal is closed
+    boardSinglePage.elements.inviteUserModal.modalTitle().should("not.exist");
+    cy.wait(15000)
+    // Click on the Profile button in the header
+    boardSinglePage.actions.header.clickOnProfileButton()
+    // Click on the Logout button
+    boardSinglePage.actions.profileDropDown.clickOnLogOutButton()
+    cy.wait("@invite").then((interception) => {
+      // Verify that invite is request is initiated by FE app and correct data is sent
+    cy.verifyInviteUserRequest(interception, users[4], boards[0])
+    // Verify sent email and accept invitation
+    cy.verifyEmailAndAcceptInvitation(users[4].Email)
+    cy.wait(5000)
+    // Verify that user is redirected to "Login" page
+    cy.url().should("include", "/login");
+    // Type invited user email
+    loginPage.actions.typeEmail(users[4].Email)
+    // Type invited user password
+    loginPage.actions.typePassword(users[4].Password)
+    // Click on sign in button
+    loginPage.actions.clickOnSignInButton()
+    // Click on the "Boards" button
+    sideNavigation.actions.clickOnBoardsButton();
+    // Verify that "Boards" page is open
+    cy.url().should("include", "/boards");
+    // Verify that user is invited only to one border
+   boardsPage.elements.boardItemList().then((boards) => {
+        const boardCount = boards.length;
+        expect(boardCount).to.equal(1)
+      });
+    // Verify that user is invited to correct board and has access to it
+      // Click on the board item
+    boardsPage.actions.clickOnBoardItem(boards[0].Board_Name);
+    // Verify that Board title is correct
+    boardSinglePage.elements.header.boardTitle().contains(boards[0].Board_Name);
+    });
+  });
+});
