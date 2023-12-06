@@ -9,7 +9,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     baseUrl: "https://trello-clone-one.vercel.app/",
-    retries: 3,
+    retries: 1,
     
   },
 });
