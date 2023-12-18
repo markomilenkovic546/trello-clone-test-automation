@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "CommonJS",
     "lib": ["es5", "dom"],
-    "types": ["cypress", "node"],
+    "types": ["cypress","@4tw/cypress-drag-drop", "node"],
     "resolveJsonModule": true,
     "baseUrl": "./",
     "paths": {
@@ -17,6 +17,7 @@
       "@board-single-page/*": ["cypress/POM/*"],
       "@board-archive-page/*": ["cypress/POM/*"],
       "@payloads/*": ["db-seeding/*"],
+      "@columns/*": ["cypress/fixtures/columns/*"],
 
     }
   },

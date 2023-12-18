@@ -48,10 +48,11 @@ class BoardSinglePage {
       columnHeader: (columnName: string) => Cypress.Chainable<JQuery<HTMLElement>>;
       columnTitle: (columnName: string) => Cypress.Chainable<JQuery<HTMLElement>>;
       manageColumnButton: (columnName: string) => Cypress.Chainable<JQuery<HTMLElement>>;
-      editColumnButton: () => Cypress.Chainable<JQuery<HTMLElement>>;
-      deleteColumnButton: () => Cypress.Chainable<JQuery<HTMLElement>>;
+      editColumnButton: (columnName: string) => Cypress.Chainable<JQuery<HTMLElement>>;
+      deleteColumnButton: (columnName: string) => Cypress.Chainable<JQuery<HTMLElement>>;
       columnTitleField: (columnName: string) => Cypress.Chainable<JQuery<HTMLElement>>;
       addCardButton: (columnName: string) => Cypress.Chainable<JQuery<HTMLElement>>;
+      addColumnButton: () => Cypress.Chainable<JQuery<HTMLElement>>;
     };
 
     card: {
@@ -112,10 +113,13 @@ class BoardSinglePage {
     column: {
       clickOnColumnItem: (columnName: string) => void;
       clickOnManageColumnButton: (columnName: string) => void;
-      clickOnEditColumnButton: () => void;
-      clickOnDeleteColumnButon: () => void;
+      clickOnEditColumnButton: (columnName: string) => void;
+      clickOnDeleteColumnButon: (columnName: string) => void;
       clickColumnTitleField: (columnName: string) => void;
       clickOnAddCardButton: (columnName: string) => void;
+      clickOnAddColumnButton: () => void;
+      clearColumnName: (columnName: string) => void;
+      typeColumnName: (columnName: string, text: string) => void;
     };
 
     card: {
@@ -185,15 +189,16 @@ class BoardSinglePage {
         columnTitle: (columnName: string) => cy.get(`.css-k008qs:contains('${columnName}')`),
         manageColumnButton: (columnName: string) =>
           cy.get(`.css-1lekzkb:contains('${columnName}')`).find('button[aria-label="Options"]'),
-        editColumnButton: () => cy.get('button:contains("Edit")'),
-        deleteColumnButton: () => cy.get('button:contains("Delete")'),
+        editColumnButton: (columnName: string) => this.elements.column.columnItem(columnName).find('[role="menuitem"]').contains('Edit'),
+        deleteColumnButton: (columnName: string) => this.elements.column.columnItem(columnName).find('[role="menuitem"]').contains('Delete'),
         columnTitleField: (columnName: string) =>
-          cy.get(`.css-4e3rfe:contains('${columnName}')`).find(".chakra-input.css-1fd5ven"),
+          cy.get(`input[value="${columnName}"]`),
         addCardButton: (columnName: string) =>
           cy
             .get(`.css-4e3rfe:contains('${columnName}')`)
             .find(".chakra-input.css-1fd5ven")
             .find('button:contains("+ Add a card")'),
+            addColumnButton: () => cy.get('button:contains("+ Add a Column")')
       },
 
       card: {
@@ -255,10 +260,13 @@ class BoardSinglePage {
       column: {
         clickOnColumnItem: (columnName: string) => this.elements.column.columnItem(columnName).click(),
         clickOnManageColumnButton: (columnName: string) => this.elements.column.manageColumnButton(columnName).click(),
-        clickOnEditColumnButton: () => this.elements.column.editColumnButton().click(),
-        clickOnDeleteColumnButon: () => this.elements.column.deleteColumnButton().click(),
+        clickOnEditColumnButton: (columnName: string) => this.elements.column.editColumnButton(columnName).click({force: true}),
+        clickOnDeleteColumnButon: (columnName: string) => this.elements.column.deleteColumnButton(columnName).click({force: true}),
         clickColumnTitleField: (columnName: string) => this.elements.column.columnTitleField(columnName).click(),
         clickOnAddCardButton: (columnName: string) => this.elements.column.addCardButton(columnName).click(),
+        clickOnAddColumnButton: () => this.elements.column.addColumnButton().click(),
+        clearColumnName: (columnName: string) => this.elements.column.columnTitleField(columnName).clear(),
+        typeColumnName: (columnName: string, text: string) => this.elements.column.columnTitleField(columnName).type(`${text}{enter}`)
       },
 
       card: {
