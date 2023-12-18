@@ -244,7 +244,7 @@ describe("User Invite", () => {
     boardSinglePage.elements.inviteUserModal.modalTitle().should("not.exist");
   });
 
-  it.only("User can invite other user to be board member", function () {
+  it("User can invite other user to be board member", function () {
     cy.intercept("POST", " https://trello-clone-one.vercel.app/api/mail").as("invite");
     // Click on the "Boards" button
     sideNavigation.actions.clickOnBoardsButton();
