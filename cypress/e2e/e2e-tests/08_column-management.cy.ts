@@ -9,13 +9,14 @@ const sideNavigation = new SideNavigation();
 const boardsPage = new BoardsPage();
 const boardSinglePage = new BoardSinglePage();
 const loginPage = new LoginPage();
-import '@4tw/cypress-drag-drop'
+import "@4tw/cypress-drag-drop";
+
+beforeEach(function () {
+  cy.visit("/");
+  cy.login(users[1].Email, users[1].Password);
+});
 
 describe("Tests which cover column management", () => {
-  beforeEach(function () {
-    cy.visit("/");
-    cy.login(users[1].Email, users[1].Password);
-  });
   it("User can create a column", function () {
     //Click on the "Boards" button
     sideNavigation.actions.clickOnBoardsButton();
@@ -79,11 +80,11 @@ describe("Tests which cover column management", () => {
     boardsPage.actions.clickOnBoardItem(boards[0].Board_Name);
     // Verify that Board title is correct
     boardSinglePage.elements.header.boardTitle().contains(boards[0].Board_Name);
-    boardSinglePage.elements.column.columnTitle(columns[4].Column_Name).as('source')
-    cy.get('.css-1a8xcjq:nth-of-type(1)').as('target')
+    boardSinglePage.elements.column.columnTitle(columns[4].Column_Name).as("source");
+    cy.get(".css-1a8xcjq:nth-of-type(1)").as("target");
     // Move column to first posistion
-    cy.get('@source').drag('@target', {force: true})
+    cy.get("@source").drag("@target", { force: true })
     // Verify that column is moved to first position
-    cy.get('.css-1a8xcjq:nth-of-type(1)').should('contain', columns[4].Column_Name)
+    cy.get(".css-1a8xcjq:nth-of-type(1)").should("contain", columns[4].Column_Name);
   });
 });
