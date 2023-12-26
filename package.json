@@ -4,7 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed-db": "npx ts-node db-seeding/seed-and-clear-db.ts",
+    "registration": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/01_registration.cy.ts",
+    "auth": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/02_authentication.cy.ts",
+    "side-navigation": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/03_side-navigation.cy.ts",
+    "profile-management": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/04_profile-management.cy.ts",
+    "board-management": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/05_board-management.cy.ts",
+    "column-management": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/06_column-management.cy.ts",
+    "card-management": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/07_card-management.cy.ts",
+    "e2e-tests": "npm run seed-db & cypress run"
+    
   },
   "keywords": [],
   "author": "Marko Milenkovic",
