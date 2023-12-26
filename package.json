@@ -14,7 +14,6 @@
     "column-management": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/06_column-management.cy.ts",
     "card-management": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/07_card-management.cy.ts",
     "e2e-tests": "npm run seed-db & cypress run"
-    
   },
   "keywords": [],
   "author": "Marko Milenkovic",
@@ -23,6 +22,7 @@
     "@4tw/cypress-drag-drop": "^2.2.5",
     "axios": "^1.6.0",
     "cypress": "^13.3.3",
+    "cypress-mochawesome-reporter": "^3.7.0",
     "dotenv": "^16.3.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
