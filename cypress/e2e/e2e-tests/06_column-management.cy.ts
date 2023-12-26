@@ -64,11 +64,26 @@ describe("Tests which cover column management", () => {
     boardsPage.actions.clickOnBoardItem(boards[0].Board_Name);
     // Verify that Board title is correct
     boardSinglePage.elements.header.boardTitle().contains(boards[0].Board_Name);
-    // Click on the manage column button
-    boardSinglePage.actions.column.clickOnManageColumnButton(columns[2].Column_Name);
-    // Click on the Delete button
-    boardSinglePage.actions.column.clickOnDeleteColumnButon(columns[2].Column_Name);
-    boardSinglePage.elements.column.columnItem(columns[2].Column_Name).should("not.exist");
+    // Count columns before delete
+    boardSinglePage.elements.column
+      .columnItems()
+      .its("length")
+      .then((length) => {
+        // Click on the manage column button
+        boardSinglePage.actions.column.clickOnManageColumnButton(columns[2].Column_Name);
+        // Click on the Delete button
+        boardSinglePage.actions.column.clickOnDeleteColumnButon(columns[2].Column_Name);
+        // Verify that expected colum is deleted
+        boardSinglePage.elements.column.columnItem(columns[2].Column_Name).should("not.exist");
+        // Count columns after delete
+        boardSinglePage.elements.column
+          .columnItems()
+          .its("length")
+          .then((lengthAfterDelete) => {
+            // Verify that only one column is deleted
+            expect(lengthAfterDelete).to.equal(length - 1);
+          });
+      });
   });
 
   it("User can move a column", function () {
@@ -83,7 +98,7 @@ describe("Tests which cover column management", () => {
     boardSinglePage.elements.column.columnTitle(columns[4].Column_Name).as("source");
     cy.get(".css-1a8xcjq:nth-of-type(1)").as("target");
     // Move column to first posistion
-    cy.get("@source").drag("@target", { force: true })
+    cy.get("@source").drag("@target", { force: true });
     // Verify that column is moved to first position
     cy.get(".css-1a8xcjq:nth-of-type(1)").should("contain", columns[4].Column_Name);
   });

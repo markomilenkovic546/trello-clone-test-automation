@@ -15,6 +15,7 @@ declare global {
       getEmailContent(email: string): Chainable<any>;
       verifyInviteUserRequest(interception: any, user: any, board: any);
       verifyEmailAndAcceptInvitation(email: string);
+      extractMemberInitials(memberName: string);
     }
   }
 }
@@ -65,9 +66,7 @@ Cypress.Commands.add("signup", (email: string, name: string, password: string, c
   // Click on the "Submit" button
   registrationPage.actions.clickOnSubmitButton();
   // Verify that approprate message shows up
-  cy.get("body")
-    .contains("We've created your account. Redirecting you to login page in 3 seconds")
-    .should("be.visible", { timeout: 7000 });
+  cy.get("body").contains("We've created your account. Redirecting you to login page in 3 seconds").should("be.visible", { timeout: 7000 });
 });
 
 // Verify that user invite request is successful and sent data is correct
@@ -92,7 +91,7 @@ Cypress.Commands.add("verifyInviteUserRequest", (interception: any, user: any, b
   expect(responseBody.message).to.equal(expectedResponseBody.message);
 });
 
-
+// Verify email content and accept invitation by leveraging "testsendr" service
 Cypress.Commands.add("verifyEmailAndAcceptInvitation", (email: string) => {
   cy.request("GET", `https://api.testsendr.link/?email=${email}`).then((response) => {
     const responseBody = response.body;
@@ -105,4 +104,12 @@ Cypress.Commands.add("verifyEmailAndAcceptInvitation", (email: string) => {
       cy.visit(link);
     }
   });
+});
+
+Cypress.Commands.add("extractMemberInitials", (memberName: string) => {
+  const initials = memberName
+    .split(" ")
+    .map((word) => word[0].toUpperCase())
+    .join("");
+  return initials;
 });
