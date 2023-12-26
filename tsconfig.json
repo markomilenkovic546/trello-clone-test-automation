@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "CommonJS",
     "lib": ["es5", "dom"],
-    "types": ["cypress","@4tw/cypress-drag-drop", "node"],
+    "types": ["cypress","@4tw/cypress-drag-drop", "node", "cypress-mochawesome-reporter"],
     "resolveJsonModule": true,
     "baseUrl": "./",
     "paths": {
