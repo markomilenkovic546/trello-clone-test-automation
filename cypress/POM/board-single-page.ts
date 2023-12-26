@@ -45,6 +45,7 @@ class BoardSinglePage {
 
     column: {
       columnItem: (columnName: string) => Cypress.Chainable<JQuery<HTMLElement>>;
+      columnItems: () => Cypress.Chainable<JQuery<HTMLElement>>;
       columnHeader: (columnName: string) => Cypress.Chainable<JQuery<HTMLElement>>;
       columnTitle: (columnName: string) => Cypress.Chainable<JQuery<HTMLElement>>;
       manageColumnButton: (columnName: string) => Cypress.Chainable<JQuery<HTMLElement>>;
@@ -57,6 +58,7 @@ class BoardSinglePage {
 
     card: {
       cardItem: (columnName: string, cardName: string) => Cypress.Chainable<JQuery<HTMLElement>>;
+      cardItems: () => Cypress.Chainable<JQuery<HTMLElement>>;
       editCardModal: {
         cardNameField: () => Cypress.Chainable<JQuery<HTMLElement>>;
         descriptionTextBox: () => Cypress.Chainable<JQuery<HTMLElement>>;
@@ -185,6 +187,7 @@ class BoardSinglePage {
 
       column: {
         columnItem: (columnName: string) => cy.get(`.css-4e3rfe:contains('${columnName}')`),
+        columnItems: () => cy.get('.css-4e3rfe'),
         columnHeader: (columnName: string) => cy.get(`.css-1lekzkb:contains('${columnName}')`),
         columnTitle: (columnName: string) => cy.get(`.css-k008qs:contains('${columnName}')`),
         manageColumnButton: (columnName: string) =>
@@ -196,7 +199,6 @@ class BoardSinglePage {
         addCardButton: (columnName: string) =>
           cy
             .get(`.css-4e3rfe:contains('${columnName}')`)
-            .find(".chakra-input.css-1fd5ven")
             .find('button:contains("+ Add a card")'),
             addColumnButton: () => cy.get('button:contains("+ Add a Column")')
       },
@@ -204,14 +206,15 @@ class BoardSinglePage {
       card: {
         cardItem: (columnName: string, cardName: string) =>
           cy.get(`.css-4e3rfe:contains('${columnName}')`).find(`.css-1g2hcr8:contains('${cardName}')`),
+          cardItems: () => cy.get('.css-1g2hcr8'),
         editCardModal: {
           cardNameField: () => cy.get('input[name="title"]'),
           descriptionTextBox: () => cy.get(".ql-editor"),
           labelsButton: () => cy.get('button:contains("Labels")'),
-          labelOption: (index: any) => cy.get("#menuitem-136"),
+          labelOption: (index: any) => cy.get(`.css-163woa2:nth-of-type(${index})`),
           assingToButton: () => cy.get('button:contains("Assign To")'),
           assingOption: (memberName: string) => cy.get(`button:contains("${memberName}")`),
-          deleteButton: () => cy.get(".chakra-button css-1dupood"),
+          deleteButton: () => cy.get(".chakra-button.css-1dupood"),
           closeModalButton: () => cy.get('button:contains("Close")'),
         },
       },

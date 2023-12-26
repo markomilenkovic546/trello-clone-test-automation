@@ -1,8 +1,9 @@
 import WelcomePage from "@welcome-page/welcome-page";
 import RegistractionPage from "@registration-page/registration-page";
+import * as users from "@fixtures/users.json"
 const welcomePage = new WelcomePage();
 const registrationPage = new RegistractionPage();
-import * as users from "@fixtures/users.json"
+
 
 beforeEach(function () {
   cy.visit("/");

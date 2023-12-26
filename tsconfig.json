@@ -18,6 +18,7 @@
       "@board-archive-page/*": ["cypress/POM/*"],
       "@payloads/*": ["db-seeding/*"],
       "@columns/*": ["cypress/fixtures/columns/*"],
+      "@cards/*": ["cypress/fixtures/cards/*"],
 
     }
   },

@@ -17,7 +17,7 @@ export const createBoard = async (loginPayload: object, createBoardPayload: obje
     const token = await loginResponse.data.token;
     const headersConfig = {
       headers: {
-        Cookie: `token=${token}`,
+        Authorization: `token=${token}`,
       },
     };
 
@@ -39,7 +39,7 @@ export const deleteBoard = async (loginPayload: object, boardID: string) => {
     const token = loginResponse.data.token;
     const headersConfig = {
       headers: {
-        Cookie: `token=${token}`,
+        Authorization: `token=${token}`,
       },
     };
 
@@ -59,7 +59,7 @@ export const createColumn = async (loginPayload: any, createColumnPayload: any) 
     const token = loginResponse.data.token;
     const headersConfig = {
       headers: {
-        Cookie: `token=${token}`,
+        Authorization: `token=${token}`,
       },
     };
 
@@ -83,7 +83,7 @@ export const deleteColumn = async (loginPayload: any, boardID: string, columnID:
     const token = loginResponse.data.token;
     const headersConfig = {
       headers: {
-        Cookie: `token=${token}`,
+        Authorization: `token=${token}`,
       },
       //timeout: 60 * 60 * 1000
     };
@@ -107,7 +107,7 @@ export const createCard = async (loginPayload: any, createCardPayload: any) => {
     const token = loginResponse.data.token;
     const headersConfig = {
       headers: {
-        Cookie: `token=${token}`,
+        Authorization: `token=${token}`,
       },
     };
 
@@ -129,7 +129,7 @@ export const deleteCard = async (loginPayload: any, boardID: string, cardID: str
     const token = loginResponse.data.token;
     const headersConfig = {
       headers: {
-        Cookie: `token=${token}`,
+        Authorization: `token=${token}`,
       },
     };
 
@@ -151,7 +151,7 @@ export const getBoards = async (loginPayload: object, userID: any) => {
     const token = await loginResponse.data.token;
     const headersConfig = {
       headers: {
-        Cookie: `token=${token}`,
+        Authorization: `token=${token}`,
       },
     };
 
