@@ -11,7 +11,7 @@ The framework follows the Page Object Model (POM) design. Additionally, the `com
 
 Test data is stored in the `cypress/fixtures` folder in JSON files, prepared to match specific test scenarios. The main goal is to clearly define the data for each test case, ensuring tests run independently without conflicts.
 
-To avoid setting up test data as a pre-condition within each test flow, and to maintain test isolation, a practical logic for data clearing and seeding has been implemented. This process relies on the Trello clone REST API, utilazing the `Axios` package.
+To maintain test isolation, and to avoid setting up test data as a pre-condition within each test flow, a logic for data clearing and seeding has been implemented. This process relies on the Trello clone REST API, utilazing the `Axios` package.
 
 The payload models are in `db-seeding/payload-models.ts`, and the actual payloads are stored in `db-seeding/payloads.ts`. The script for data seeding and clearing, is located in `db-seeding/seed-and-clear-db.ts`, and it runs before running each test suite (spec file). Script will first clear and then seed database with test data. This approach allows individual test suite execution.
 
