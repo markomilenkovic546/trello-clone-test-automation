@@ -83,7 +83,7 @@ To run the tests in Docker container, follow these steps:
    - `npm run column-management:edge`
    - `npm run card-management:edge`
 
-   ## Test Reports 📊
+   ## Test Run Reports 📊
 
      After running the tests, the `cypress-mochawesome-reporter` generates the `reports` folder with detailed HTML reports. These reports provide insights into test results, including passed, failed, and skipped tests, along with detailed logs and screenshots.
 
