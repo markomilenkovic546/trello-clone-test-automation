@@ -15,14 +15,22 @@ To avoid setting up test data as a pre-condition within each test flow, and to m
 
 The payload models are in `db-seeding/payload-models.ts`, and the actual payloads are stored in `db-seeding/payloads.ts`. The script for data seeding and clearing, is located in `db-seeding/seed-and-clear-db.ts`, and it runs before running each test suite (spec file). Script will first clear and then seed database with test data. This approach allows individual test suite execution.
 
+
 ## Running Locally
 
-To run the project locally, follow these steps:
+To run the tests locally, follow these steps:
 
 1. Clone the project locally.
 2. Run `npm install` to install the necessary dependencies.
 3. Create a `.env` file in the root directory (check `.env.example` in the project root to see what needs to be included).
 
+
+## Running in Docker Container
+
+To run the tests in Docker container, follow these steps:
+1. Run `docker build -t your-docker-image-name .` in order to build docker image
+2. Run `docker run -your-image-name npm run script-name` in order to run specific npm script in Docker container
+   
 
 ## Available Scripts
 
@@ -31,7 +39,7 @@ To run the project locally, follow these steps:
    - To run all specs in 'Electron': `npm run e2e-tests`
    - To run all specs in 'Chrome': `npm run e2e-tests:chrome`
    - To run all specs in 'Mozilla Firefox': `npm run e2e-tests:firefox`
-   - To run all specs in 'Edge': `npm run e2e-tests:edge
+   - To run all specs in 'Edge': `npm run e2e-tests:edge`
 
 `
 - To run individual test suites/spec files:
