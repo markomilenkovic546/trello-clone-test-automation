@@ -78,7 +78,7 @@ To run the project locally, follow these steps:
 
    ## Test Reports
 
-After running the tests, the `cypress-mochawesome-reporter` generates the `reports` folder with detailed HTML reports. These reports provide insights into test results, including passed, failed, and skipped tests, along with detailed logs and screenshots.
+     After running the tests, the `cypress-mochawesome-reporter` generates the `reports` folder with detailed HTML reports. These reports provide insights into test results, including passed, failed, and skipped tests, along with detailed logs and screenshots.
 
 
 
