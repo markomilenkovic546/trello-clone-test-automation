@@ -41,7 +41,6 @@ To run the tests in Docker container, follow these steps:
    - To run all specs in 'Mozilla Firefox': `npm run e2e-tests:firefox`
    - To run all specs in 'Edge': `npm run e2e-tests:edge`
 
-`
 - To run individual test suites/spec files:
 
  - To run in 'Electron'
