@@ -1,4 +1,4 @@
-## Introduction
+## Introduction 📖
 
 The idea behind working on this project was to design an automation testing framework by leveraging Cypress, with the goal of providing end-to-end (e2e) test coverage for the 'Trello clone' full-stack app.
 
@@ -7,7 +7,7 @@ The framework follows the Page Object Model (POM) design. Additionally, the `com
 **Trello Clone**: [https://trello-clone-one.vercel.app/](https://trello-clone-one.vercel.app/)
 
 
-## Test Data Preparation and Clearing
+## Test Data Preparation and Clearing 🗃️
 
 Test data is stored in the `cypress/fixtures` folder in JSON files, prepared to match specific test scenarios. The main goal is to clearly define the data for each test case, ensuring tests run independently without conflicts.
 
@@ -16,7 +16,7 @@ To avoid setting up test data as a pre-condition within each test flow, and to m
 The payload models are in `db-seeding/payload-models.ts`, and the actual payloads are stored in `db-seeding/payloads.ts`. The script for data seeding and clearing, is located in `db-seeding/seed-and-clear-db.ts`, and it runs before running each test suite (spec file). Script will first clear and then seed database with test data. This approach allows individual test suite execution.
 
 
-## Running Locally
+## Running Locally 🖥️
 
 To run the tests locally, follow these steps:
 
@@ -25,14 +25,14 @@ To run the tests locally, follow these steps:
 3. Create a `.env` file in the root directory (check `.env.example` in the project root to see what needs to be included).
 
 
-## Running in Docker Container
+## Running in Docker Container 🐳
 
 To run the tests in Docker container, follow these steps:
 1. Run `docker build -t your-docker-image-name .` in order to build docker image
 2. Run `docker run -your-image-name npm run script-name` in order to run specific npm script in Docker container
    
 
-## Available Scripts
+## Available Scripts 🧪
 
 - To run all test suites/spec files: 
 
@@ -84,7 +84,7 @@ To run the tests in Docker container, follow these steps:
    - `npm run column-management:edge`
    - `npm run card-management:edge`
 
-   ## Test Reports
+   ## Test Reports 📊
 
      After running the tests, the `cypress-mochawesome-reporter` generates the `reports` folder with detailed HTML reports. These reports provide insights into test results, including passed, failed, and skipped tests, along with detailed logs and screenshots.
 
