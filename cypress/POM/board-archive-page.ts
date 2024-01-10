@@ -32,7 +32,7 @@ class BoardsPage {
     this.elements = {
       createBoardButton: () => cy.get('button:contains("Create a board")'),
       boardItem: (boardName) => cy.get(`.css-aeel9r:contains('${boardName}')`),
-      boardItemList: () => cy.get('.css-aeel9r'),
+      boardItemList: () => cy.get(".css-aeel9r"),
       createBoardModal: {
         modalTitle: () => cy.get('header:contains("Create board")'),
         boardNameInputField: () => cy.get('input[placeholder="Board name"]'),
