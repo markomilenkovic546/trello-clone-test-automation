@@ -29,7 +29,7 @@ To run the tests locally, follow these steps:
 
 To run the tests in Docker container, follow these steps:
 1. Run `docker build -t your-docker-image-name .` in order to build docker image
-2. Run `docker run -your-image-name npm run script-name` in order to run specific npm script in Docker container
+2. Run `docker run -your-docker-image-name npm run script-name` in order to run specific npm script in Docker container
    
 
 ## Available Scripts 🧪
