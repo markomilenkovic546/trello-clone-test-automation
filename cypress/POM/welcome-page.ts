@@ -1,32 +1,28 @@
 class WelcomePage {
-
     //=====================Elements===========================//
     elements: {
         loginButton: () => Cypress.Chainable<JQuery<HTMLElement>>;
         signupButton: () => Cypress.Chainable<JQuery<HTMLElement>>;
-      };
+    };
 
-      actions: {
+    actions: {
         clickOnSignupButton: () => void;
         clickOnLoginButton: () => void;
-      }
-    
-      constructor() {
+    };
+
+    constructor() {
         this.elements = {
-          loginButton: () => cy.get('button:contains("Log in")'),
-          signupButton: () => cy.get('button:contains("Sign up")'),
+            loginButton: () => cy.get('button:contains("Log in")'),
+            signupButton: () => cy.get('button:contains("Sign up")')
         };
 
         this.actions = {
-          clickOnSignupButton: () => this.elements.signupButton().click(),
-          clickOnLoginButton: () => this.elements.loginButton().click()
-        }
-      }
+            clickOnSignupButton: () => this.elements.signupButton().click(),
+            clickOnLoginButton: () => this.elements.loginButton().click()
+        };
+    }
 
-      //=====================Actions===========================//
-
-  
-
+    //=====================Actions===========================//
 }
 
 export default WelcomePage;

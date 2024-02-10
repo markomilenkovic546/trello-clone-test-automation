@@ -10,7 +10,6 @@
     "smoke-tests:chrome": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/00_smoke-tests.cy.ts --browser chrome",
     "smoke-tests:firefox": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/00_smoke-tests.cy.ts --browser firefox",
     "smoke-tests:edge": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/00_smoke-tests.cy.ts --browser edge",
-
     "registration": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/01_registration.cy.ts",
     "auth": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/02_authentication.cy.ts",
     "side-navigation": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/03_side-navigation.cy.ts",
@@ -18,12 +17,10 @@
     "board-management": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/05_board-management.cy.ts",
     "column-management": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/06_column-management.cy.ts",
     "card-management": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/07_card-management.cy.ts",
-
     "e2e-tests": "npm run seed-db & cypress run",
     "e2e-tests:chrome": "npm run seed-db && cypress run --browser chrome",
     "e2e-tests:firefox": "npm run seed-db && cypress run --browser firefox",
     "e2e-tests:edge": "npm run seed-db && cypress run --browser edge",
-
     "registration:chrome": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/01_registration.cy.ts --browser chrome",
     "auth:chrome": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/02_authentication.cy.ts --browser chrome",
     "side-navigation:chrome": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/03_side-navigation.cy.ts --browser chrome",
@@ -31,7 +28,6 @@
     "board-management:chrome": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/05_board-management.cy.ts --browser chrome",
     "column-management:chrome": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/06_column-management.cy.ts --browser chrome",
     "card-management:chrome": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/07_card-management.cy.ts --browser chrome",
-
     "registration:firefox": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/01_registration.cy.ts --browser firefox",
     "auth:firefox": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/02_authentication.cy.ts --browser firefox",
     "side-navigation:firefox": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/03_side-navigation.cy.ts --browser firefox",
@@ -39,7 +35,6 @@
     "board-management:firefox": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/05_board-management.cy.ts --browser firefox",
     "column-management:firefox": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/06_column-management.cy.ts --browser firefox",
     "card-management:firefox": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/07_card-management.cy.ts --browser firefox",
-
     "registration:edge": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/01_registration.cy.ts --browser edge",
     "auth:edge": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/02_authentication.cy.ts --browser edge",
     "side-navigation:edge": "npm run seed-db && cypress run --spec cypress/e2e/e2e-tests/03_side-navigation.cy.ts --browser edge",
@@ -57,6 +52,7 @@
     "cypress": "^13.3.3",
     "cypress-mochawesome-reporter": "^3.7.0",
     "dotenv": "^16.3.1",
+    "prettier": "^3.2.5",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   }
